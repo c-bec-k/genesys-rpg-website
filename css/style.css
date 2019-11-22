@@ -1,0 +1,100 @@
+/*==========
+* Resets
+==========*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*==========
+* Variables
+==========*/
+
+:root {
+  --clr-primary: 249, 157, 51;
+  --clr-primary-light: 255, 206, 100;
+  --clr-primary-dark: 193, 110, 0;
+  --clr-secondary: 51, 143, 249;
+  --clr-secondary-light: 120, 191, 255;
+  --clr-secondary-dark: 0, 98, 197;
+}
+
+/*==========
+* Base styles
+==========*/
+
+main {
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.subheading {
+  margin: 0 1em;
+}
+
+.suggested {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.suggested > * + * {
+  margin-left: 0.75em;
+}
+
+form {
+  margin: 1em;
+}
+
+/*==========
+* form styles
+==========*/
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: rgba(var(--clr-primary), 0.8);
+  transition: background-color 0.25s ease-in-out;
+}
+
+input[type="radio"] + label {
+  background-color: initial;
+  transition: background-color 0.25s ease-in-out;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.big-label {
+  flex-basis: 2.5em;
+  text-align: center;
+  padding: 0.75em 1.25em;
+  border-radius: 0.5em;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+input[type="reset"] {
+  display: block;
+  background-color: rgba(var(--clr-secondary-dark), 1);
+  border: 0;
+  color: #fff;
+  padding: 0.5em 1.5em;
+  margin: 1.5rem auto;
+  border-radius: 0.5em;
+}
