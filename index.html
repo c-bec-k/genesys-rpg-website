@@ -1,137 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <script type="module" src="./scripts/armor.js"></script>
-    <title>Genesys RPG | Armor Price Calculator</title>
-  </head>
-  <body>
-    <h1>Calculate Armor Price</h1>
-    <ul class="suggested">
-      <li><strong>Suggested Price:</strong> <span data-price>0</span></li>
-      <li><strong>Suggested Encumbrance:</strong> <span data-enc>0</span></li>
-      <li><strong>Suggested Hard Points:</strong> <span data-hp>0</span></li>
-    </ul>
-    <main>
-      <h2 class="subheading">Choose Your Options</h2>
-      <form>
-        <fieldset>
-          <legend>Soak</legend>
-          <div class="main-flex">
-            <input
-              type="radio"
-              id="soak-0"
-              name="soak"
-              value="0"
-              checked
-            /><label class="big-label" for="soak-0">+0</label>
-            <input type="radio" id="soak-1" name="soak" value="1" /><label
-              class="big-label"
-              for="soak-1"
-              >+1</label
-            >
-            <input type="radio" id="soak-2" name="soak" value="2" /><label
-              class="big-label"
-              for="soak-2"
-              >+2</label
-            >
-            <input type="radio" id="soak-3" name="soak" value="3" /><label
-              class="big-label"
-              for="soak-3"
-              >+3</label
-            >
-            <input type="radio" id="soak-4" name="soak" value="4" /><label
-              class="big-label"
-              for="soak-4"
-              >+4</label
-            >
-          </div>
-        </fieldset>
 
-        <fieldset>
-          <legend>Defense</legend>
-          <div class="main-flex">
-            <input
-              type="radio"
-              id="def-0"
-              name="defense"
-              value="0"
-              checked
-            /><label class="big-label" for="def-0">0</label>
-            <input type="radio" id="def-1" name="defense" value="1" /><label
-              class="big-label"
-              for="def-1"
-              >1</label
-            >
-            <input type="radio" id="def-2" name="defense" value="2" /><label
-              class="big-label"
-              for="def-2"
-              >2</label
-            >
-            <input type="radio" id="def-3" name="defense" value="3" /><label
-              class="big-label"
-              for="def-3"
-              >3</label
-            >
-            <input type="radio" id="def-4" name="defense" value="4" /><label
-              class="big-label"
-              for="def-4"
-              >4</label
-            >
-          </div>
-        </fieldset>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="./scripts/armor.js"></script>
+  <title>Genesys RPG | Armor Price Calculator</title>
+</head>
 
-        <fieldset>
-          <legend>Other Options</legend>
-          <div>
-            <input type="checkbox" id="reinforced" name="reinforced" />
-            <label for="reinforced">Reinforced? </label>
+<body>
+  <h1>Calculate Armor Price</h1>
+  <ul class="suggested">
+    <li><strong>Suggested Price:</strong> <span data-price>0</span></li>
+    <li><strong>Suggested Encumbrance:</strong> <span data-enc>0</span></li>
+    <li><strong>Suggested Hard Points:</strong> <span data-hp>0</span></li>
+  </ul>
+  <main>
+    <h2 class="subheading">Choose Your Options</h2>
+    <form>
+      <fieldset>
+        <legend>Soak</legend>
+        <div class="main-flex">
+          <input type="radio" id="soak-0" name="soak" value="0" checked /><label class="big-label"
+            for="soak-0">+0</label>
+          <input type="radio" id="soak-1" name="soak" value="1" /><label class="big-label" for="soak-1">+1</label>
+          <input type="radio" id="soak-2" name="soak" value="2" /><label class="big-label" for="soak-2">+2</label>
+          <input type="radio" id="soak-3" name="soak" value="3" /><label class="big-label" for="soak-3">+3</label>
+          <input type="radio" id="soak-4" name="soak" value="4" /><label class="big-label" for="soak-4">+4</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Defense</legend>
+        <div class="main-flex">
+          <input type="radio" id="def-0" name="defense" value="0" checked /><label class="big-label"
+            for="def-0">0</label>
+          <input type="radio" id="def-1" name="defense" value="1" /><label class="big-label" for="def-1">1</label>
+          <input type="radio" id="def-2" name="defense" value="2" /><label class="big-label" for="def-2">2</label>
+          <input type="radio" id="def-3" name="defense" value="3" /><label class="big-label" for="def-3">3</label>
+          <input type="radio" id="def-4" name="defense" value="4" /><label class="big-label" for="def-4">4</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Other Options</legend>
+        <div>
+          <input type="checkbox" id="reinforced" name="reinforced" />
+          <label for="reinforced">Reinforced? </label>
+        </div>
+        <div>
+          <h3>Extra Hard Points</h3>
+          <div class="pill-slider">
+            <input type="radio" id="hard-points-0" name="hard-points" value="0" checked /><label class="big-label pill-label" for="hard-points-0">+0</label>
+            <input type="radio" id="hard-points-1" name="hard-points" value="1" /><label class="big-label pill-label" for="hard-points-1">+1</label>
+            <input type="radio" id="hard-points-2" name="hard-points" value="2" /><label class="big-label pill-label" for="hard-points-2">+2</label>
+            <input type="radio" id="hard-points-3" name="hard-points" value="3" /><label class="big-label pill-label" for="hard-points-3">+3</label>
+            <input type="radio" id="hard-points-4" name="hard-points" value="4" /><label class="big-label pill-label" for="hard-points-4">+4</label>
           </div>
-          <div>
-            <p>
-              <strong>Extra Hard Points:</strong>
-              <span data-extra-hard-points>0</span>
-            </p>
-            <input
-              type="range"
-              id="extra-hard-points"
-              name="extra-hard-points"
-              min="0"
-              max="5"
-              value="0"
-            />
+        </div>
+        <div>
+          <h3>Reduced Encumbrance</h3>
+          <div class="pill-slider">
+            <input type="radio" id="reduced-enc-0" name="reduced-enc" value="0" checked /><label class="big-label pill-label"
+              for="reduced-enc-0">±0</label>
+            <input type="radio" id="reduced-enc-1" name="reduced-enc" value="1" /><label class="big-label pill-label"
+              for="reduced-enc-1">–1</label>
+            <input type="radio" id="reduced-enc-2" name="reduced-enc" value="2" /><label class="big-label pill-label"
+              for="reduced-enc-2">–2</label>
+            <input type="radio" id="reduced-enc-3" name="reduced-enc" value="3" /><label class="big-label pill-label"
+              for="reduced-enc-3">–3</label>
           </div>
-          <div>
-            <p>
-              <strong>Reduced Encumbrance:</strong>
-              <span data-reduced-encumbrance>0</span>
-            </p>
-            <input
-              type="range"
-              id="reduced-encumbrance"
-              name="reduced-encumbrance"
-              min="0"
-              max="3"
-              value="0"
-            />
-          </div>
-        </fieldset>
-        <input type="reset" value="Reset" />
-      </form>
-    </main>
-    <footer class="small">
-      <p class="footer__text">
-        <em>Genesys</em> is &copy;Fantasy Flight Games. This is a fan site and
-        is not a challenge to their copyright.
-      </p>
-      <p class="footer__text">This site is &copy;2019 cbeck designs.</p>
-    </footer>
-  </body>
+        </div>
+      </fieldset>
+      <input type="reset" value="Reset" />
+    </form>
+  </main>
+  <footer class="small">
+    <p class="footer__text">
+      <em>Genesys</em> is &copy;Fantasy Flight Games. This is a fan site and
+      is not a challenge to their copyright.
+    </p>
+    <p class="footer__text">This site is &copy;2019 cbeck designs.</p>
+  </footer>
+</body>
+
 </html>
