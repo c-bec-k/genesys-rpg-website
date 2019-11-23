@@ -25,6 +25,7 @@ body {
 
 body {
   font-family: "Fira Sans", sans-serif;
+  min-height: 100vh;
 }
 
 /*==========
@@ -52,6 +53,9 @@ h2 {
 
 h1 {
   font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 h2 {
@@ -64,7 +68,11 @@ main {
 }
 
 .subheading {
-  margin: 0 1em;
+  margin: 1em 1em 0.25em 1em;
+}
+
+.small {
+  font-size: 0.825em;
 }
 
 .suggested {
@@ -73,6 +81,7 @@ main {
   list-style: none;
   background-color: rgba(var(--clr-secondary), 0.6);
   padding: 0.825em 1em;
+  margin: 0;
 }
 
 .suggested > * + * {
@@ -80,7 +89,7 @@ main {
 }
 
 form {
-  margin: 1em;
+  margin: 0 1em;
 }
 
 /*==========
@@ -99,6 +108,7 @@ input[type="radio"]:checked + label {
 input[type="radio"] + label {
   background-color: initial;
   transition: background-color 0.25s ease-in-out;
+  cursor: pointer;
 }
 
 fieldset {
@@ -120,10 +130,23 @@ fieldset {
 
 input[type="reset"] {
   display: block;
-  background-color: rgba(var(--clr-secondary-dark), 1);
+  /* background-color: rgba(var(--clr-secondary), 1); */
   border: 0;
-  color: #fff;
+  /* color: #fff; */
   padding: 0.5em 1.5em;
   margin: 1.5rem auto;
   border-radius: 0.5em;
+  cursor: pointer;
+}
+
+/*==========
+* Footer
+==========*/
+
+footer {
+  background-color: rgb(var(--clr-secondary-dark));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
 }
