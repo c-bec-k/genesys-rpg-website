@@ -113,7 +113,7 @@ input[type="radio"] + label {
   border: 1px solid black;
 }
 
-fieldset {
+.main-flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
