@@ -1,4 +1,5 @@
 const soak = new Map([
+  ["0", 0],
   ["1", 50],
   ["2", 500],
   ["3", 1000],
@@ -6,6 +7,7 @@ const soak = new Map([
 ]);
 
 const defense = new Map([
+  ["0", 0],
   ["1", 50],
   ["2", 500],
   ["3", 2000],
@@ -13,16 +15,30 @@ const defense = new Map([
 ]);
 
 const encumbrance = new Map([
+  ["0", 0],
   ["1", 75],
   ["2", 250],
   ["3", 500]
 ]);
 
-const reinforced = new Map([[true, 3000]]);
+const reinforced = new Map([
+  ["no", 0],
+  ["yes", 3000]
+]);
 
-export const armorPrice = {
-  soak: soak,
-  defense: defense,
-  encumbrance: encumbrance,
-  reinforced: reinforced
-};
+const lowLow = new Map([
+  ["low", 100],
+  ["high", 250]
+]);
+
+const lowHigh = new Map([
+  ["low", 250],
+  ["high", 500]
+]);
+
+const highHigh = new Map([
+  ["low", 1000],
+  ["high", 2000]
+]);
+
+export { soak, defense, encumbrance, reinforced, lowLow, lowHigh, highHigh };
