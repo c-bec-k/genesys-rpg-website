@@ -33,12 +33,12 @@ body {
 ==========*/
 
 :root {
-  --clr-primary: 249, 157, 51;
-  --clr-primary-light: 255, 206, 100;
-  --clr-primary-dark: 193, 110, 0;
-  --clr-secondary: 51, 143, 249;
-  --clr-secondary-light: 120, 191, 255;
-  --clr-secondary-dark: 0, 98, 197;
+  --clr-primary: 243,148,37;
+  --clr-primary-light: 255,197,88;
+  --clr-primary-dark: 187,102,0;
+  --clr-secondary: 0,88,148;
+  --clr-secondary-light: 76,132,197;
+  --clr-secondary-dark: 0,48,102;
 }
 
 /*==========
@@ -47,11 +47,12 @@ body {
 
 h1,
 h2 {
-  font-family: "Arber Vintage", display;
   color: rgb(var(--clr-primary));
+  font-family: "Arber Vintage", display;
 }
 
 h1 {
+  /* background-color: rgb(var(--clr-secondary-dark)); */
   font-size: 3rem;
   margin: 0;
   padding: 0;
@@ -79,7 +80,7 @@ main {
   display: flex;
   justify-content: space-around;
   list-style: none;
-  background-color: rgba(var(--clr-secondary), 0.6);
+  background-color: rgb(var(--clr-primary));
   padding: 0.825em 1em;
   margin: 0;
 }
@@ -88,13 +89,29 @@ main {
   margin-left: 0.75em;
 }
 
+.suggested strong {
+  font-size: .875rem;
+}
+
+.suggested  span {
+  font-size: 1.25rem;
+}
+
 form {
   margin: 0 1em;
+}
+
+fieldset + fieldset {
+  margin-top: 2rem;
 }
 
 /*==========
 * form styles
 ==========*/
+
+legend {
+  padding: 0 0.5em;
+}
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -117,7 +134,7 @@ input[type="radio"] + label {
 .main-flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .big-label {
@@ -128,6 +145,7 @@ input[type="radio"] + label {
   width: 3em;
   height: 3em;
   border-radius: 0.5em;
+  margin: 0 .25em;
 }
 
 .flex-column {
@@ -160,6 +178,7 @@ input[type="reset"] {
 
 .pill-slider {
   display: flex;
+  justify-content: center;
 }
 
 .pill-slider > .pill-label {
@@ -168,15 +187,18 @@ input[type="reset"] {
   width: 2em;
   border-width: 1px 0.5px;
   border-color: #666;
+  margin: 0;
 
 }
 
 .pill-slider > label:first-of-type {
   border-radius: 0.5em 0 0 0.5em;
+  border-left-width: 1px;
 }
 
 .pill-slider > label:last-of-type {
   border-radius: 0 0.5em 0.5em 0;
+  border-right-width: 1px;
 }
 
 /*==========

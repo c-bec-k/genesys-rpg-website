@@ -11,8 +11,8 @@ document
 function renderSuggestions(e) {
   const soakAmount = document.querySelector('[name="soak"]:checked').value,
     defenseAmout = document.querySelector('[name="defense"]:checked').value,
-    encumbranceReduction = document.querySelector("#reduced-encumbrance").value,
-    extraHardPoints = document.querySelector("#extra-hard-points").value,
+    encumbranceReduction = document.querySelector('[name="reduced-enc"]:checked').value,
+    extraHardPoints = document.querySelector('[name="hard-points"]:checked').value,
     totalPrice = getTotalPrice(
       soakAmount,
       defenseAmout,
@@ -25,9 +25,6 @@ function renderSuggestions(e) {
       encumbranceReduction
     ),
     totalHardPoints = calculateHP(totalEncumbrance, extraHardPoints);
-
-  renderExtraHardPoints();
-  reducedEncumbrance(encumbranceReduction);
 
   document.querySelector("[data-price]").innerText = totalPrice;
   document.querySelector("[data-enc]").innerText = totalEncumbrance;
@@ -69,19 +66,6 @@ function getTotalPrice(soak, defense, hp, enc) {
   } else {
     return `${Intl.NumberFormat().format(basePrice + reinforcedPrice)}`;
   }
-}
-
-function renderExtraHardPoints() {
-  const text = document.querySelector("[data-extra-hard-points]"),
-    value = document.querySelector("#extra-hard-points").value;
-
-  text.innerText = value;
-}
-
-function reducedEncumbrance(enc) {
-  const text = document.querySelector("[data-reduced-encumbrance]");
-
-  text.innerText = `${enc === "0" ? "" : "–"}${enc}`;
 }
 
 function renderEncumbrance(soak, defense, encumbrance) {
