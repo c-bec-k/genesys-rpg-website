@@ -175,10 +175,19 @@ input[type="reset"] {
   content: url(../img/checked.svg);
 }
 
+.inline-flex {
+  display: flex;
+  align-items: center;
+}
+
+.inline-flex + .inline-flex {
+  margin-top: 1.5em;
+}
 
 .pill-slider {
   display: flex;
   justify-content: center;
+  margin-left: 0.5em;
 }
 
 .pill-slider > .pill-label {
