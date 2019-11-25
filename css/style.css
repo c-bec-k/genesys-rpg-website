@@ -20,12 +20,11 @@ body {
 
 @font-face {
   font-family: "Arber Vintage";
-  src: url("../fonts/Arber-Vintage-Free.woff") format("woff");
+  src: url("/fonts/Arber-Vintage-Free.woff") format("woff");
 }
 
 body {
   font-family: "Fira Sans", sans-serif;
-  min-height: 100vh;
 }
 
 /*==========
@@ -47,7 +46,7 @@ body {
 
 h1,
 h2 {
-  color: rgb(var(--clr-primary));
+  color: rgb(var(--clr-secondary));
   font-family: "Arber Vintage", display;
 }
 
@@ -63,7 +62,13 @@ h2 {
   font-size: 2.25rem;
 }
 
-main {
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.measure {
   max-width: 60ch;
   margin: 0 auto;
 }
@@ -77,12 +82,17 @@ main {
 }
 
 .suggested {
+  align-items: center;
   display: flex;
   justify-content: space-around;
   list-style: none;
   background-color: rgb(var(--clr-primary));
   padding: 0.825em 1em;
   margin: 0;
+}
+
+.suggested-single {
+  justify-content: center;
 }
 
 .suggested > * + * {
@@ -118,13 +128,13 @@ input[type="checkbox"] {
   display: none;
 }
 
-input[type="radio"]:checked + label {
+input[type="radio"]:checked + .big-label {
   border-color: black;
   background-color: rgba(var(--clr-primary), 0.8);
   transition: background-color 0.25s ease-in-out;
 }
 
-input[type="radio"] + label {
+input[type="radio"] + .big-label {
   background-color: initial;
   transition: background-color 0.25s ease-in-out;
   cursor: pointer;
@@ -146,33 +156,41 @@ input[type="radio"] + label {
   height: 3em;
   border-radius: 0.5em;
   margin: 0 .25em;
+  /* transition: box-shadow 250ms; */
+}
+
+label:focus {
+  outline: none;
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
 }
 
 .flex-column {
   flex-direction: column;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 input[type="reset"] {
   display: block;
-  /* background-color: rgba(var(--clr-secondary), 1); */
-  /* border: 0; */
-  /* color: #fff; */
   padding: 1.5em 2.75em;
   margin: 1.5rem auto;
   border-radius: 0.5em;
   cursor: pointer;
 }
 
-#reinforced + label::after {
+#reinforced + label::before {
   transform: translateY(10%);
   display: inline-block;
-  content: url(../img/unchecked.svg);
+  content: url(/img/unchecked.svg);
   width: 2em;
   height: 2em;
 }
 
-#reinforced:checked + label::after {
-  content: url(../img/checked.svg);
+#reinforced:checked + label::before {
+  content: url(/img/checked.svg);
 }
 
 .inline-flex {
@@ -197,7 +215,6 @@ input[type="reset"] {
   border-width: 1px 0.5px;
   border-color: #666;
   margin: 0;
-
 }
 
 .pill-slider > label:first-of-type {
@@ -215,6 +232,7 @@ input[type="reset"] {
 ==========*/
 
 footer {
+  margin-top: auto;
   background-color: rgb(var(--clr-secondary-dark));
   display: flex;
   flex-direction: column;
@@ -226,3 +244,72 @@ footer {
   max-width: 40ch;
   text-align: center;
 }
+
+
+/*==========
+* Modal Window
+==========*/
+
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 1em;
+  background-color: rgb(var(--clr-secondary-dark));
+  color: white;
+}
+
+
+/*==========
+*
+* Weapon creation
+*
+==========*/
+
+.list {
+  list-style: none;
+  color: #aaa;
+}
+
+.list input[type="radio"] {
+  display: initial;
+}
+
+.list input[type="radio"]:checked + label {
+  color: #000;
+}
+
+.vertical-pill-slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  margin-top: 0.5em;
+}
+
+.vertical-pill-slider > .pill-label {
+  border-radius: 0;
+  height: 2em;
+  width: 2em;
+  border-width: 1px 0.5px;
+  border-color: #666;
+  margin: 0;
+
+}
+
+.vertical-pill-slider > label:first-of-type {
+  border-radius: 0.5em 0.5em 0 0;
+  border-top-width: 1px;
+}
+
+.vertical-pill-slider > label:last-of-type {
+  border-radius: 0 0 0.5em 0.5em;
+  border-bottom-width: 1px;
+}
+
+/* [for^="damage"]::before {
+  content: "+";
+} */

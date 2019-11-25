@@ -83,3 +83,10 @@ function resetNumbers() {
   document.querySelector("[data-reduced-encumbrance]").innerText = 0;
   document.querySelector("[data-extra-hard-points]").innerText = 0;
 }
+
+
+// keypress handler for lables
+
+document.querySelectorAll('label').forEach(label => {
+  label.addEventListener('keypress', label.click)
+});
