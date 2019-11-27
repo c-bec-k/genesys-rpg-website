@@ -42,71 +42,43 @@
       <fieldset>
         <legend>Range</legend>
         <ul class="list">
-          <li>Engaged</li>
-          <li>Short</li>
-          <li>Medium</li>
-          <li>Long</li>
-          <li>Extreme</li>
-          <li>Strategic</li>
+          <li><input type="radio" name="range" id="engaged" value="engaged" checked><label for="engaged">Engaged</label></li>
+          <li><input type="radio" name="range" id="short" value="short"><label for="short">Short</label></li>
+          <li><input type="radio" name="range" id="medium" value="medium"><label for="medium">Medium</label></li>
+          <li><input type="radio" name="range" id="long" value="long"><label for="long">Long</label></li>
+          <li><input type="radio" name="range" id="extreme" value="extreme"><label for="extreme">Extreme</label></li>
+          <li><input type="radio" name="range" id="strategic" value="strategic"><label for="strategic">Strategic</label></li>
         </ul>
       </fieldset>
 
       <fieldset>
         <legend>Damage</legend>
-        <strong>Damage:</strong> <span data-damage>25</span>
-        <div class="flex-row">
-          <span class="vertical-pill-slider">
-            <input type="radio" id="damage-00" name="damage10" value="" checked /><label class="big-label pill-label"
-              for="damage-00" tabindex="0">0</label>
-            <input type="radio" id="damage-10" name="damage10" value="1" /><label class="big-label pill-label"
-              for="damage-10" tabindex="0">1</label>
-            <input type="radio" id="damage-20" name="damage10" value="2" /><label class="big-label pill-label"
-              for="damage-20" tabindex="0">2</label>
-          </span>
-          <span class="vertical-pill-slider">
-            <input type="radio" id="damage-0" name="damage" value="0" checked /><label class="big-label pill-label" for="damage-0"
-              tabindex="0">0</label>
-            <input type="radio" id="damage-1" name="damage" value="1" /><label class="big-label pill-label" for="damage-1"
-              tabindex="0">1</label>
-            <input type="radio" id="damage-2" name="damage" value="2" /><label class="big-label pill-label" for="damage-2"
-              tabindex="0">2</label>
-            <input type="radio" id="damage-3" name="damage" value="3" /><label class="big-label pill-label" for="damage-3"
-              tabindex="0">3</label>
-            <input type="radio" id="damage-4" name="damage" value="4" /><label class="big-label pill-label" for="damage-4"
-              tabindex="0">4</label>
-            <input type="radio" id="damage-5" name="damage" value="5" checked /><label class="big-label pill-label" for="damage-5"
-              tabindex="0">5</label>
-            <input type="radio" id="damage-6" name="damage" value="6" /><label class="big-label pill-label" for="damage-6"
-              tabindex="0">6</label>
-            <input type="radio" id="damage-7" name="damage" value="7" /><label class="big-label pill-label" for="damage-7"
-              tabindex="0">7</label>
-            <input type="radio" id="damage-8" name="damage" value="8" /><label class="big-label pill-label" for="damage-8"
-              tabindex="0">8</label>
-            <input type="radio" id="damage-9" name="damage" value="9" /><label class="big-label pill-label" for="damage-9"
-              tabindex="0">9</label>
-              
-          </span>
+        <div class="main-flex">
+          <button class="damage--select">–</button>
+          <input type="number" min="4" max="25" value="8" class="damage--select">
+          <button class="damage--select">+</button>
         </div>
+      
       </fieldset>
 
       <fieldset>
         <legend>Critical Rating</legend>
-        <div class="inline-flex">
+        <div class="main-flex">
           <span class="pill-slider">
             <input type="radio" id="critical-0" name="critical" value="0" checked /><label class="big-label pill-label"
-              for="critical-0" tabindex="0">0</label>
+              for="critical-0">0</label>
             <input type="radio" id="critical-1" name="critical" value="1" /><label class="big-label pill-label"
-              for="critical-1" tabindex="0">1</label>
+              for="critical-1">1</label>
             <input type="radio" id="critical-2" name="critical" value="2" /><label class="big-label pill-label"
-              for="critical-2" tabindex="0">2</label>
+              for="critical-2">2</label>
             <input type="radio" id="critical-3" name="critical" value="3" /><label class="big-label pill-label"
-              for="critical-3" tabindex="0">3</label>
+              for="critical-3">3</label>
             <input type="radio" id="critical-4" name="critical" value="4" /><label class="big-label pill-label"
-              for="critical-4" tabindex="0">4</label>
+              for="critical-4">4</label>
               <input type="radio" id="critical-5" name="critical" value="5" /><label class="big-label pill-label" for="critical-5"
-                tabindex="0">5</label>
+              >5</label>
               <input type="radio" id="critical-6" name="critical" value="6" /><label class="big-label pill-label" for="critical-6"
-                tabindex="0">6</label>
+              >6</label>
           </span>
         </div>
       </fieldset>
