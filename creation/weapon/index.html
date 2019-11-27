@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/css/style.css"> 
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="./scripts/weapon.js"></script>
   <title>Genesys RPG | Weapon Price Calculator</title>
 </head>
 <body>
@@ -24,39 +25,41 @@
     <form>
       <fieldset>
         <legend>Skill</legend>
-        <ul class="list">
-          <li><input type="radio" name="skill" id="Brawl" value="Brawl" checked> <label for="Brawl">Brawl</label></li>
-          <li><input type="radio" name="skill" id="Gunnery" value="Gunnery"> <label for="Gunnery">Gunnery</label></li>
-          <li><input type="radio" name="skill" id="Melee" value="Melee"> <label for="Melee">Melee</label></li>
-          <li><input type="radio" name="skill" id="Melee-Heavy" value="Melee (Heavy)"> <label for="Melee-Heavy">Melee
-              (Heavy)</label></li>
-          <li><input type="radio" name="skill" id="Melee-Light" value="Melee (Light)"> <label for="Melee-Light">Melee (Light)</label></li>
-          <li><input type="radio" name="skill" id="Ranged" value="Ranged"> <label for="Ranged">Ranged</label></li>
-          <li><input type="radio" name="skill" id="Ranged-Heavy" value="Ranged (Heavy)"> <label for="Ranged-Heavy">Ranged
-            (Heavy)</label></li>
-          <li><input type="radio" name="skill" id="Ranged-Light" value="Ranged (Light)"> <label for="Ranged-Light">Ranged
-              (Light)</label></li>
-        </ul>
+        <div class="pill-slider">
+          <input type="radio" name="skill" id="Brawl" value="Brawl" checked> <label for="Brawl" class="pill-label__text big-label small">Brawl</label>
+          <input type="radio" name="skill" id="Melee" value="Melee"> <label for="Melee" class="pill-label__text big-label small">Melee</label></li>
+          <input type="radio" name="skill" id="Melee-Heavy" value="Melee (Heavy)"> <label for="Melee-Heavy" class="pill-label__text big-label small">Melee (Heavy)</label>
+          <input type="radio" name="skill" id="Melee-Light" value="Melee (Light)"> <label for="Melee-Light" class="pill-label__text big-label small">Melee (Light)</label>
+        </div>
+        <div class="pill-slider">
+          <input type="radio" name="skill" id="Gunnery" value="Gunnery"> <label for="Gunnery" class="pill-label__text big-label small">Gunnery</label>
+          <input type="radio" name="skill" id="Ranged" value="Ranged"> <label for="Ranged" class="pill-label__text big-label small">Ranged</label>
+          <input type="radio" name="skill" id="Ranged-Heavy" value="Ranged (Heavy)"> <label for="Ranged-Heavy" class="pill-label__text big-label small">Ranged (Heavy)</label>
+          <input type="radio" name="skill" id="Ranged-Light" value="Ranged (Light)"> <label for="Ranged-Light" class="pill-label__text big-label small">Ranged (Light)</label>
+        </div>
       </fieldset>
 
       <fieldset>
         <legend>Range</legend>
-        <ul class="list">
-          <li><input type="radio" name="range" id="engaged" value="engaged" checked><label for="engaged">Engaged</label></li>
-          <li><input type="radio" name="range" id="short" value="short"><label for="short">Short</label></li>
-          <li><input type="radio" name="range" id="medium" value="medium"><label for="medium">Medium</label></li>
-          <li><input type="radio" name="range" id="long" value="long"><label for="long">Long</label></li>
-          <li><input type="radio" name="range" id="extreme" value="extreme"><label for="extreme">Extreme</label></li>
-          <li><input type="radio" name="range" id="strategic" value="strategic"><label for="strategic">Strategic</label></li>
-        </ul>
+        <div class="pill-slider">
+          <input type="radio" name="range" id="engaged" value="engaged" checked><label for="engaged" class="pill-label__text big-label small">Engaged</label>
+          <input type="radio" name="range" id="short" value="short"><label for="short" class="pill-label__text big-label small">Short</label>
+          <input type="radio" name="range" id="medium" value="medium"><label for="medium" class="pill-label__text big-label small">Medium</label>
+        </div>
+        <div class="pill-slider">
+          <input type="radio" name="range" id="long" value="long"><label for="long" class="pill-label__text big-label small">Long</label>
+          <input type="radio" name="range" id="extreme" value="extreme"><label for="extreme" class="pill-label__text big-label small">Extreme</label>
+          <input type="radio" name="range" id="strategic" value="strategic"><label for="strategic" class="pill-label__text big-label small">Strategic</label>
+        </div>
       </fieldset>
 
       <fieldset>
         <legend>Damage</legend>
-        <div class="main-flex">
-          <button class="damage--select">–</button>
-          <input type="number" min="4" max="25" value="8" class="damage--select">
-          <button class="damage--select">+</button>
+        <div class="pill-slider">
+          <button type="button" class="pill-label damage--select">–</button>
+          <div class="pill-label damage--select" data-show-damage>8</div>
+          <input type="hidden" value="8" id="damage">
+          <button type="button" class="pill-label damage--select">+</button>
         </div>
       
       </fieldset>
@@ -85,6 +88,33 @@
 
       <fieldset>
         <legend>Item Qualities</legend>
+        Accurate
+        Auto-Fire
+        Blast
+        Breach
+        Burn
+        Concussive
+        Cumbersome
+        Defensive
+        Disorient
+        Ensnare
+        Guided
+        Inaccurate
+        Inferior
+        Knockdown
+        Limited Ammo
+        Linked
+        Pierce
+        Prepare
+        Reinforced
+        Slow-Firing
+        Stun
+        Stun Damage
+        Sunder
+        Superior
+        Tractor
+        Unwieldy
+        Vicious
       </fieldset>
       <input type="reset" value="Reset" />
     </form>

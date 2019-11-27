@@ -157,7 +157,6 @@ input[type="radio"]:checked + .big-label {
   height: 3em;
   border-radius: 0.5em;
   margin: 0 .25em;
-  /* transition: box-shadow 250ms; */
 }
 
 input:focus + label {
@@ -270,19 +269,6 @@ footer {
 *
 ==========*/
 
-.list {
-  list-style: none;
-  color: #aaa;
-}
-
-.list input[type="radio"] {
-  display: initial;
-}
-
-.list input[type="radio"]:checked + label {
-  color: #000;
-}
-
 .damage--select {
   font-size: 1.25rem;
   display: flex;
@@ -292,6 +278,20 @@ footer {
   height: 2em;
 }
 
-input[type="number"] {
-  text-align: center;
+.brawn[data-show-damage]::before {
+  content: "+";
+}
+
+.pill-slider > .pill-label__text {
+  border-radius: 0;
+  min-height: 2em;
+  width: auto;
+  border-width: 1px 0.5px;
+  border-color: #666;
+  margin: 0;
+  padding: .25em 1em;
+}
+
+.pill-slider + .pill-slider {
+  margin-top: 1em;
 }
