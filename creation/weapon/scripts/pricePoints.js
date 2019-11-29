@@ -51,4 +51,12 @@ const qualities = new Map([
   ["vicious", 100]
 ])
 
-export { damage, range, critical, qualities }
+const limitedAmmo = new Map([
+  ['1', -500],
+  ['2', -400],
+  ['3', -300],
+  ['4', -200],
+  ['5', -100]
+])
+
+export { damage, range, critical, qualities, limitedAmmo }
