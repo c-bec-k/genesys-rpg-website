@@ -111,6 +111,11 @@ form {
   margin: 0 1em;
 }
 
+fieldset {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
 fieldset + fieldset {
   margin-top: 2rem;
 }
@@ -294,4 +299,15 @@ footer {
 
 .pill-slider + .pill-slider {
   margin-top: 1em;
+}
+
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-gap: 1em;
+  align-items: center;
+}
+
+.pill-slider--grid {
+  justify-content: flex-start;
 }
