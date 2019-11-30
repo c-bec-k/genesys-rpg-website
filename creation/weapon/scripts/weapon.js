@@ -104,7 +104,19 @@ function getQualitiesPrice() {
   const blastDamage = getDamagePrice('[name="blast"]:checked')
   priceGrid.push(Math.ceil(.5 * blastDamage))
 
+  const pierceDamage = getPierceDamage()
+  priceGrid.push(pierceDamage)
+
   return priceGrid.reduce( (a, b) => a + b)
+}
+
+function getPierceDamage() {
+  const pierceNumber = parseInt(document.querySelector('[name="pierce"]:checked').value),
+        damageNumber = parseInt(document.querySelector('#damage').value),
+        pierce = document.querySelector('#pierce');
+
+  pierce.value = pierceNumber + damageNumber
+  return getDamagePrice('#pierce') - getDamagePrice('#damage')
 }
 
 document.querySelector('input[type="reset"]').addEventListener('click', () =>{ document.querySelector('[data-show-price]').innerText = 0})
