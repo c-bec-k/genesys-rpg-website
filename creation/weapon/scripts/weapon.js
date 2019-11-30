@@ -50,14 +50,15 @@ document.querySelector('#form').addEventListener('change', updatePrice)
 function updatePrice(e) {
   e.target.attributes.type === "button" ? changeNumber(e) : ''
   const skillModifier = getSkillModifier(),
-        damagePrice = getDamagePrice(),
+        damagePrice = getDamagePrice('#damage'),
         rangePrice = getRangePrice(),
         critPrice = getCritPrice(),
+        qualitiesPrice = getQualitiesPrice(),
         priceLabel = document.querySelector('[data-show-price]')
 
 
 
-  priceLabel.innerText = Intl.NumberFormat().format((damagePrice + rangePrice + critPrice) * skillModifier)
+  priceLabel.innerText = Intl.NumberFormat().format((damagePrice + rangePrice + critPrice + qualitiesPrice) * skillModifier)
 }
 
 
@@ -68,8 +69,8 @@ function getSkillModifier() {
   else { return 1 };
 }
 
-function getDamagePrice() {
-  const damageNumber = parseInt(document.querySelector('#damage').value)
+function getDamagePrice(element) {
+  const damageNumber = parseInt(document.querySelector(element).value)
         for (let [key, val] of prices.damage) {
           if (damageNumber <= key) {return val}
         }
@@ -86,3 +87,24 @@ function getCritPrice() {
 
   return prices.critical.get(crit)
 }
+
+function getQualitiesPrice() {
+  const normalQualities = ['accurate', 'auto-fire', 'breach', 'burn', 'concussive', 'cumbersome', 'defensive', 'disorient', 'ensnare', 'guided', 'inaccurate', 'inferior', 'knockdown', 'linked', 'prepare', 'reinforced', 'slow-firing', 'stun', 'sunder', 'tractor', 'unwieldy', 'vicious'],
+        otherStuff = 0;
+  let priceGrid = []
+
+  normalQualities.forEach(quality => {
+    const rating = parseInt(document.querySelector(`[name='${quality}']:checked`).value),
+          price = prices.qualities.get(quality)
+    priceGrid.push(rating*price)
+  })
+
+  priceGrid.push(prices.limitedAmmo.get(parseInt(document.querySelector('[name="limited-ammo"]:checked').value)))
+
+  const blastDamage = getDamagePrice('[name="blast"]:checked')
+  priceGrid.push(Math.ceil(.5 * blastDamage))
+
+  return priceGrid.reduce( (a, b) => a + b)
+}
+
+document.querySelector('input[type="reset"]').addEventListener('click', () =>{ document.querySelector('[data-show-price]').innerText = 0})
