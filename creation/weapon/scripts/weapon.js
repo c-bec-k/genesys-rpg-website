@@ -89,7 +89,7 @@ function getCritPrice() {
 }
 
 function getQualitiesPrice() {
-  const normalQualities = ['accurate', 'auto-fire', 'breach', 'burn', 'concussive', 'cumbersome', 'defensive', 'disorient', 'ensnare', 'guided', 'inaccurate', 'inferior', 'knockdown', 'linked', 'prepare', 'reinforced', 'slow-firing', 'stun', 'sunder', 'tractor', 'unwieldy', 'vicious'],
+  const normalQualities = ['accurate', 'auto-fire', 'breach', 'burn', 'concussive', 'cumbersome', 'defensive', 'disorient', 'ensnare', 'guided', 'inaccurate', 'inferior', 'knockdown', 'linked', 'prepare', 'reinforced', 'slow-firing', 'stun', 'sunder', 'superior', 'tractor', 'unwieldy', 'vicious'],
         otherStuff = 0;
   let priceGrid = []
 
