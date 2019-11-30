@@ -45,7 +45,8 @@ body {
 ==========*/
 
 h1,
-h2 {
+h2,
+nav > a {
   color: rgb(var(--clr-secondary));
   font-family: "Arber Vintage", display;
 }
