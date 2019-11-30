@@ -10,32 +10,24 @@
 </head>
 <body>
   <h1>Calculate Weapon Price</h1>
-  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span>0</span></div>
-
-  <!-- Needed:
-    Skill
-    Range
-    Damage
-    Crit
-    Other Qualities
-  -->
+  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-show-price>0</span></div>
 
   <main class="measure">
     <h2 class="subheading">Choose Your Options</h2>
-    <form>
+    <form id="form">
       <fieldset>
         <legend>Skill</legend>
         <div class="pill-slider">
-          <input type="radio" name="skill" id="Brawl" value="Brawl" checked> <label for="Brawl" class="pill-label__text big-label small">Brawl</label>
-          <input type="radio" name="skill" id="Melee" value="Melee"> <label for="Melee" class="pill-label__text big-label small">Melee</label></li>
-          <input type="radio" name="skill" id="Melee-Heavy" value="Melee (Heavy)"> <label for="Melee-Heavy" class="pill-label__text big-label small">Melee (Heavy)</label>
-          <input type="radio" name="skill" id="Melee-Light" value="Melee (Light)"> <label for="Melee-Light" class="pill-label__text big-label small">Melee (Light)</label>
+          <input type="radio" name="skill" id="brawl" value="Brawl" checked> <label for="brawl" class="pill-label__text big-label small">Brawl</label>
+          <input type="radio" name="skill" id="melee" value="Melee"> <label for="melee" class="pill-label__text big-label small">Melee</label></li>
+          <input type="radio" name="skill" id="melee-heavy" value="Melee (Heavy)"> <label for="melee-heavy" class="pill-label__text big-label small">Melee (Heavy)</label>
+          <input type="radio" name="skill" id="melee-light" value="Melee (Light)"> <label for="melee-light" class="pill-label__text big-label small">Melee (Light)</label>
         </div>
         <div class="pill-slider">
-          <input type="radio" name="skill" id="Gunnery" value="Gunnery"> <label for="Gunnery" class="pill-label__text big-label small">Gunnery</label>
-          <input type="radio" name="skill" id="Ranged" value="Ranged"> <label for="Ranged" class="pill-label__text big-label small">Ranged</label>
-          <input type="radio" name="skill" id="Ranged-Heavy" value="Ranged (Heavy)"> <label for="Ranged-Heavy" class="pill-label__text big-label small">Ranged (Heavy)</label>
-          <input type="radio" name="skill" id="Ranged-Light" value="Ranged (Light)"> <label for="Ranged-Light" class="pill-label__text big-label small">Ranged (Light)</label>
+          <input type="radio" name="skill" id="gunnery" value="Gunnery"> <label for="gunnery" class="pill-label__text big-label small">Gunnery</label>
+          <input type="radio" name="skill" id="ranged" value="Ranged"> <label for="ranged" class="pill-label__text big-label small">Ranged</label>
+          <input type="radio" name="skill" id="ranged-heavy" value="Ranged (Heavy)"> <label for="ranged-heavy" class="pill-label__text big-label small">Ranged (Heavy)</label>
+          <input type="radio" name="skill" id="ranged-light" value="Ranged (Light)"> <label for="ranged-light" class="pill-label__text big-label small">Ranged (Light)</label>
         </div>
       </fieldset>
 
@@ -56,10 +48,14 @@
       <fieldset>
         <legend>Damage</legend>
         <div class="pill-slider">
-          <button type="button" class="pill-label damage--select">–</button>
-          <div class="pill-label damage--select" data-show-damage>8</div>
-          <input type="hidden" value="8" id="damage">
-          <button type="button" class="pill-label damage--select">+</button>
+          <button type="button" class="pill-label damage--select" data-change="-" data-target="damage">–</button>
+          <div class="pill-label damage--select" data-show-damage>5</div>
+          <input type="number" value="5" min="4" max="25" id="damage" tabindex="-1">
+          <button type="button" class="pill-label damage--select" data-change="+" data-target="damage">+</button>
+        </div>
+        <div>
+          <input type="checkbox" class="checkbox" id="brawn-based" name="brawn-based" />
+          <label for="brawn-based"><strong>Brawn-Based</strong></label>
         </div>
       
       </fieldset>
@@ -108,8 +104,23 @@
           </span>
         
           <strong>Blast:</strong>
-          <span>To be done</span>
+          <span data-blast class="pill-slider pill-slider--grid">
+            <input type="radio" id="blast-00" name="blast" value="0" checked /><label class="big-label pill-label" for="blast-00">0</label>
+            <!-- <input type="radio" id="blast--5" name="blast" value="5" /><label class="big-label pill-label" for="blast--5">5</label> -->
+            <input type="radio" id="blast-4" name="blast" value="4" /><label class="big-label pill-label" for="blast-4">1</label>
+            <input type="radio" id="blast-3" name="blast" value="3" /><label class="big-label pill-label" for="blast-3">2</label>
+            <input type="radio" id="blast-2" name="blast" value="2" /><label class="big-label pill-label" for="blast-2">3</label>
+            <input type="radio" id="blast-1" name="blast" value="1" /><label class="big-label pill-label" for="blast-1">4</label>
+            <input type="radio" id="blast-0" name="blast" value="0" /><label class="big-label pill-label" for="blast-0">5</label>
+
+          </span>
         
+
+
+
+
+
+
           <strong>Breach:</strong>
           <span class="pill-slider pill-slider--grid">
             <input type="radio" id="breach-0" name="breach" value="0" checked /><label class="big-label pill-label"

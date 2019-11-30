@@ -82,6 +82,8 @@ body {
 }
 
 .suggested {
+  position: sticky;
+  top: 1em;
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -129,7 +131,8 @@ legend {
 }
 
 input[type="radio"],
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="number"] {
   opacity: 0;
   position: absolute;
 }
@@ -186,7 +189,7 @@ input[type="reset"] {
   cursor: pointer;
 }
 
-#reinforced + label::before {
+.checkbox + label::before {
   transform: translateY(10%);
   display: inline-block;
   content: url(/img/unchecked.svg);
@@ -194,7 +197,7 @@ input[type="reset"] {
   height: 2em;
 }
 
-#reinforced:checked + label::before {
+.checkbox:checked + label::before {
   content: url(/img/checked.svg);
 }
 
@@ -281,6 +284,7 @@ footer {
   align-items: center;
   width: 2em;
   height: 2em;
+  cursor: pointer;
 }
 
 .brawn[data-show-damage]::before {
