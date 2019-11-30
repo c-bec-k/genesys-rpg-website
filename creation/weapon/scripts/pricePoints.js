@@ -12,7 +12,8 @@ const range = new Map([
   ['short', 0],
   ['medium', 100],
   ['long', 300],
-  ['extreme', 600]
+  ['extreme', 600],
+  ['strategic', 1000]
 ])
 
 const critical = new Map([
