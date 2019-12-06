@@ -15,8 +15,10 @@ src: local('BoltonBold'), url('./fonts/BoltonBold.woff') format('woff');
 }
 
 @font-face {
-font-family: Genesys;
-src: url('/fonts/GenesysIcons.woff') format('woff');
+  font-family: Genesys;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/fonts/GenesysIcons.woff) format('woff') ;
 }
 
 
@@ -398,14 +400,8 @@ footer {
 
 
 .genesys {
-  font-family: 'Genesys';
-  /* text-shadow: -1px 1px 0 #000,
-				        1px 1px 0 #000,
-		      		 1px -1px 0 #000,
-				      -1px -1px 0 #000; */
-}
-
-.boost {
-  color: #73DCCD;
-
+  display: inline-block;
+  transform: translateY(15%);
+  height: 1em;
+  width: 1em;
 }
