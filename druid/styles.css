@@ -14,6 +14,11 @@ font-weight: normal;
 src: local('BoltonBold'), url('./fonts/BoltonBold.woff') format('woff');
 }
 
+@font-face {
+font-family: Genesys;
+src: url('/fonts/GenesysIcons.woff') format('woff');
+}
+
 
 /**********
 * Resets
@@ -85,7 +90,8 @@ html {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   line-height: var(--line-height-small);
   font-family: Bolton, display;
   font-weight: 700;
@@ -118,7 +124,6 @@ h4,
 img {
   max-width: 100%;
 }
-
 
 /**********
 * Main styles
@@ -331,6 +336,44 @@ footer {
 }
 
 
+/* Reel */
+
+.reel {
+  display: flex;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: #fff #000;
+}
+
+.reel::-webkit-scrollbar {
+  height: 1rem;
+}
+
+.reel::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+.reel::-webkit-scrollbar-thumb {
+  background-color: #000;
+  background-image: linear-gradient(#000 0, #000 0.25rem, #fff 0.25rem, #fff 0.75rem, #000 0.75rem);
+}
+
+.reel > * {
+  flex: 0 0 auto;
+}
+
+
+.reel > img {
+  height: 100%;
+  flex-basis: auto;
+  width: auto;
+}
+
+.reel > * + * {
+  margin-left: 1rem;
+}
+
 /**********
 * Utility Classes
 **********/
@@ -345,4 +388,24 @@ footer {
 
 .small {
   font-size: var(--s-1);
+}
+
+.talents > div {
+  flex-basis: var(--measure-half);
+}
+
+/* Genesys Icons */
+
+
+.genesys {
+  font-family: 'Genesys';
+  /* text-shadow: -1px 1px 0 #000,
+				        1px 1px 0 #000,
+		      		 1px -1px 0 #000,
+				      -1px -1px 0 #000; */
+}
+
+.boost {
+  color: #73DCCD;
+
 }
