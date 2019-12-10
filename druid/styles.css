@@ -49,7 +49,7 @@ html {
 **********/
 
 :root {
-  font-size: calc(0.25vw + 1em);
+  font-size: calc(0.825rem + 0.5vw);
 
   --color-primary: 95, 61,28;
   --color-primary-dark: 50, 20, 0;
