@@ -80,8 +80,6 @@ function resetNumbers() {
   document.querySelector("[data-price]").innerText = 0;
   document.querySelector("[data-enc]").innerText = 1;
   document.querySelector("[data-hp]").innerText = 1;
-  document.querySelector("[data-reduced-encumbrance]").innerText = 0;
-  document.querySelector("[data-extra-hard-points]").innerText = 0;
 }
 
 

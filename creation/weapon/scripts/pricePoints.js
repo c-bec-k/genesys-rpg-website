@@ -41,6 +41,7 @@ const qualities = new Map([
   ["inferior", -100],
   ["knockdown", 100],
   ["linked", 200],
+  ["pierce", 100],
   ["prepare", -75],
   ["reinforced", 250],
   ["slow-firing", -75],
