@@ -1,14 +1,9 @@
 import * as prices from "./pricePoints.js";
 
 document.querySelector("form").addEventListener("change", renderSuggestions);
-document.querySelectorAll('[type="range"]').forEach(element => {
-  element.addEventListener("mousemove", renderSuggestions);
-});
-document
-  .querySelector('input[type="reset"]')
-  .addEventListener("click", resetNumbers);
+document.querySelector('input[type="reset"]').addEventListener("click", resetNumbers);
 
-function renderSuggestions(e) {
+function renderSuggestions() {
   const soakAmount = document.querySelector('[name="soak"]:checked').value,
     defenseAmout = document.querySelector('[name="defense"]:checked').value,
     encumbranceReduction = document.querySelector('[name="reduced-enc"]:checked').value,
