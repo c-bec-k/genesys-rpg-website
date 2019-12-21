@@ -15,10 +15,14 @@ src: local('BoltonBold'), url('./fonts/BoltonBold.woff') format('woff');
 }
 
 @font-face {
-  font-family: Genesys;
+  font-family: 'Genesys';
   font-style: normal;
   font-weight: normal;
-  src: url(/fonts/GenesysIcons.woff) format('woff') ;
+  src: url(./fonts/GenesysGlyphsAndDice.woff) format('woff');
+}
+
+.genesys-dice {
+  font-family: 'Genesys';
 }
 
 
