@@ -21,9 +21,10 @@ function changeNumber(e) {
         show = document.querySelector(`[data-show-${target}]`),
         brawn = document.querySelector('#brawn-based');
   let currentNumber = parseInt(element.value),
-      max = document.querySelector('#brawn-based').checked ? 8 : 25;
+      max = document.querySelector('#brawn-based').checked ? 8 : 25,
+      min = document.querySelector('#brawn-based').checked ? 3 : 1;
 
-  currentNumber = direction === '-' && currentNumber <= 4 ? 4 : direction === '-' && currentNumber > max ? max : direction === '+' && currentNumber >= max ? max : direction === '+' ? currentNumber + 1 : direction === '-' ? currentNumber - 1 : currentNumber
+  currentNumber = direction === '-' && currentNumber <= min ? min : direction === '-' && currentNumber > max ? max : direction === '+' && currentNumber >= max ? max : direction === '+' ? currentNumber + 1 : direction === '-' ? currentNumber - 1 : currentNumber
   element.value = currentNumber
   show.innerText = (brawn.checked) ? `+${currentNumber - 3}` : currentNumber
   const event = new Event('change', { bubbles: true })
