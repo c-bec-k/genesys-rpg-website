@@ -137,6 +137,13 @@ input[type="number"] {
   opacity: 0;
   position: absolute;
   z-index: -99999;
+  text-align: center;
+}
+
+input.reset {
+  opacity: initial;
+  position: initial;
+  z-index: initial;
 }
 
 input[type="radio"]:checked + .big-label {
@@ -181,6 +188,11 @@ input:focus + label {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
 }
 
 input[type="reset"] {
@@ -316,4 +328,42 @@ footer {
 
 .pill-slider--grid {
   justify-content: flex-start;
+}
+
+/*==========
+*
+* Vehicle Creation
+*
+==========*/
+
+.vehicle-number {
+  font-size: 2rem;
+  width: 2.25em;
+  /* height:2.5em; */
+}
+
+#handling[aria-checked="false"] > span:last-child { display: none; }
+#handling[aria-checked="true"] > span:first-child { display: none; }
+
+
+/*==========
+*
+* Modules
+*
+==========*/
+
+.stack {
+  --space: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+} 
+
+.stack > * + * {
+  margin-top: var(--space);
 }
