@@ -13,84 +13,64 @@
   <h1>Calculate Vehicle Price</h1>
   <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-show-price>0</span></div>
 
-  <main class="measure">
-    <fieldset data-silhouette>
-      <legend>Silhouette</legend>
-      <div class="pill-slider">
-        <input type="radio" name="silhouette" id="silhouette-1" value="1" checked><label for="silhouette-1"
-          class="pill-label__text big-label small">1</label>
-        <input type="radio" name="silhouette" id="silhouette-2" value="2"><label for="silhouette-2"
-          class="pill-label__text big-label small">2</label>
-        <input type="radio" name="silhouette" id="silhouette-3" value="3"><label for="silhouette-3"
-          class="pill-label__text big-label small">3</label>
-        <input type="radio" name="silhouette" id="silhouette-4" value="4"><label for="silhouette-4"
-          class="pill-label__text big-label small">4</label>
-        <input type="radio" name="silhouette" id="silhouette-5" value="5"><label for="silhouette-5"
-          class="pill-label__text big-label small">5</label>
-      </div>
-      <div class="pill-slider">
-        <input type="radio" name="silhouette" id="silhouette-6" value="6" checked><label for="silhouette-6"
-          class="pill-label__text big-label small">6</label>
-        <input type="radio" name="silhouette" id="silhouette-7" value="7"><label for="silhouette-7"
-          class="pill-label__text big-label small">7</label>
-        <input type="radio" name="silhouette" id="silhouette-8" value="8"><label for="silhouette-8"
-          class="pill-label__text big-label small">8</label>
-        <input type="radio" name="silhouette" id="silhouette-9" value="9"><label for="silhouette-9"
-          class="pill-label__text big-label small">9</label>
-        <input type="radio" name="silhouette" id="silhouette-10" value="10"><label for="silhouette-10"
-          class="pill-label__text big-label small">10</label>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Handling</legend>
-      <button role="button" class="pill-label damage--select" id="handling" role="switch" aria-checked="true" aria-label="positive handling">
-        <span>–</span>
-        <span>+</span>
-      </button>
-      <div class="pill-slider">
-        <input type="radio" name="handling" id="handling-0" value="0"><label for="handling-0"
-          class="pill-label__text big-label small">0</label>
-        <input type="radio" name="handling" id="handling-1" value="1" checked><label for="handling-1"
-          class="pill-label__text big-label small">1</label>
-        <input type="radio" name="handling" id="handling-2" value="2"><label for="handling-2"
-          class="pill-label__text big-label small">2</label>
-        <input type="radio" name="handling" id="handling-3" value="3"><label for="handling-3"
-          class="pill-label__text big-label small">3</label>
-        <input type="radio" name="handling" id="handling-4" value="4"><label for="handling-4"
-          class="pill-label__text big-label small">4</label>
-      </div>
-    </fieldset>
-    <fieldset class="stack">
-      <legend>Hull Trauma</legend>
-      <div><strong>Suggestion: </strong><span data-suggest="htt">5</span></div>
-      <div class="pill-slider flex-row flex-center">
-        <button type="button" class="pill-label damage--select" data-change="-" data-target="htt">–</button>
-        <input class="reset vehicle-number" type="number" value="5" min="1" id="htt">
-        <button type="button" class="pill-label damage--select" data-change="+" data-target="htt">+</button>
-      </div>
-    </fieldset>
-    
-    <fieldset class="stack">
-      <legend>System Strain</legend>
-      <div><strong>Suggestion: </strong><span data-suggest="sst">5</span></div>
-      <div class="pill-slider flex-row flex-center">
-        <button type="button" class="pill-label damage--select" data-change="-" data-target="sst">–</button>
-        <input class="reset vehicle-number" type="number" value="5" min="1" id="sst">
-        <button type="button" class="pill-label damage--select" data-change="+" data-target="sst">+</button>
-      </div>
-    </fieldset>
-    <fieldset class="stack">
-      <legend>Occupants</legend>
-      <div><strong>Suggestion: </strong><span data-suggest="occupants">5</span></div>
-    </fieldset>
-    <fieldset class="stack">
-      <legend>Consumables</legend>
-      <div><strong>Suggestion: </strong><span data-suggest="consumables">5</span></div>
-    </fieldset>
-    <fieldset class="stack">
-      <legend>Encumbrance Capacity</legend>
-      <div><strong>Suggestion: </strong><span data-suggest="encumbrance">5</span></div>
-    </fieldset>
+  <main class="center">
+    <form>
+      <fieldset class="stack">
+        <legend>Silhouette</legend>
+        <div class="pill">
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil1" checked><label for="sil1">1</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil2"><label for="sil2">2</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil3"><label for="sil3">3</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil4"><label for="sil4">4</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil5"><label for="sil5">5</label>
+        </div>
+        <div class="pill">
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil6"><label for="sil6">6</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil7"><label for="sil7">7</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil8"><label for="sil8">8</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil9"><label for="sil9">9</label>
+          <input type="radio" class="visually-hidden" name="silhouette" id="sil10"><label for="sil10">10</label>
+        </div>
+      </fieldset>
+      <fieldset class="stack">
+        <legend>Mobility</legend>
+        <div>
+          <div class="flex-between">
+            <strong>Max Speed:&nbsp;</strong>
+            <span class="pill">
+              <input type="radio" class="visually-hidden" name="speed" id="speed1" checked><label for="speed1">1</label>
+              <input type="radio" class="visually-hidden" name="speed" id="speed2"><label for="speed2">2</label>
+              <input type="radio" class="visually-hidden" name="speed" id="speed3"><label for="speed3">3</label>
+              <input type="radio" class="visually-hidden" name="speed" id="speed4"><label for="speed4">4</label>
+              <input type="radio" class="visually-hidden" name="speed" id="speed5"><label for="speed5">5</label>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div class="flex-between">
+            <strong>Handling: </strong>
+            <span class="pill">
+              <input type="radio" class="visually-hidden" name="handling" id="handling1" checked><label for="handling">1</label>
+              <input type="radio" class="visually-hidden" name="handling" id="handling2"><label for="handling">2</label>
+              <input type="radio" class="visually-hidden" name="handling" id="handling3"><label for="handling">3</label>
+              <input type="radio" class="visually-hidden" name="handling" id="handling4"><label for="handling">4</label>
+              <input type="radio" class="visually-hidden" name="handling" id="handling5"><label for="handling">5</label>
+            </span>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="stack">
+        <legend>Superstructure</legend>
+        
+      </fieldset>
+    </form>
   </main>
 </body>
+<footer class="small">
+  <p class="footer__text">
+    <em>Genesys</em> is &copy;Fantasy Flight Games. This is a fan site and
+    is not a challenge to their copyright.
+  </p>
+  <p class="footer__text">This site is &copy;2019 cbeck designs.</p>
+</footer>
 </html>
