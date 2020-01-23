@@ -93,6 +93,24 @@ body {
   white-space: nowrap; /* added line */
 }
 
+.disappear {
+  display: none;
+}
+
+.display-button {
+  border-radius: var(--s1);
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--fs1);
+  height: var(--s4);
+  width: var(--s4);
+}
+
+.button-text {
+  border: 2px solid rgb(var(--clr-secondary-dark));
+  background-color: transparent;
+
+}
 /*==========
 * Base styles
 ==========*/
@@ -189,6 +207,12 @@ legend {
   padding: 0 0.5em;
 }
 
+select {
+  font-size: var(--fs2);
+  text-align: center;
+  min-width: var(--s5);
+}
+
 /*==========
 * Footer
 ==========*/
@@ -235,7 +259,7 @@ footer {
   box-shadow: 0 0 5px rgba(0,0,0,0.25);
 }
 
-.pill > * {
+.pill > label {
   display: flex;
   padding: var(--s1) var(--s2);
   cursor: pointer;

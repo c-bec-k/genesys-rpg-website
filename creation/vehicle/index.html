@@ -11,57 +11,118 @@
 <body>
   <nav><a href="/">Home</a></nav>
   <h1>Calculate Vehicle Price</h1>
-  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-show-price>0</span></div>
+  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-price>0</span></div>
 
   <main class="center">
     <form>
       <fieldset class="stack">
         <legend>Silhouette</legend>
-        <div class="pill">
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil1" checked><label for="sil1">1</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil2"><label for="sil2">2</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil3"><label for="sil3">3</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil4"><label for="sil4">4</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil5"><label for="sil5">5</label>
-        </div>
-        <div class="pill">
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil6"><label for="sil6">6</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil7"><label for="sil7">7</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil8"><label for="sil8">8</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil9"><label for="sil9">9</label>
-          <input type="radio" class="visually-hidden" name="silhouette" id="sil10"><label for="sil10">10</label>
+        <div class="center">
+        <button type="button" class="display-button" aria-label="decrease silhouette" data-direction="decrease" data-value="-1" data-target="silhouette">-</button>
+        <button type="button" class="display-button button-text" aria-label="choose silhouette" data-silhouette data-min="1" data-max="10"> 2 </button>
+        <button type="button" class="display-button" aria-label="increase silhouette" data-direction="increase" data-value="1" data-target="silhouette">+</button>
         </div>
       </fieldset>
       <fieldset class="stack">
         <legend>Mobility</legend>
-        <div>
           <div class="flex-between">
             <strong>Max Speed:&nbsp;</strong>
             <span class="pill">
-              <input type="radio" class="visually-hidden" name="speed" id="speed1" checked><label for="speed1">1</label>
-              <input type="radio" class="visually-hidden" name="speed" id="speed2"><label for="speed2">2</label>
-              <input type="radio" class="visually-hidden" name="speed" id="speed3"><label for="speed3">3</label>
-              <input type="radio" class="visually-hidden" name="speed" id="speed4"><label for="speed4">4</label>
-              <input type="radio" class="visually-hidden" name="speed" id="speed5"><label for="speed5">5</label>
+              <input type="radio" class="disappear" value='1' name="speed" id="speed1" checked><label for="speed1">1</label>
+              <input type="radio" class="disappear" value='2' name="speed" id="speed2"><label for="speed2">2</label>
+              <input type="radio" class="disappear" value='3' name="speed" id="speed3"><label for="speed3">3</label>
+              <input type="radio" class="disappear" value='4' name="speed" id="speed4"><label for="speed4">4</label>
+              <input type="radio" class="disappear" value='5' name="speed" id="speed5"><label for="speed5">5</label>
             </span>
           </div>
-        </div>
-        <div>
           <div class="flex-between">
-            <strong>Handling: </strong>
-            <span class="pill">
-              <input type="radio" class="visually-hidden" name="handling" id="handling1" checked><label for="handling">1</label>
-              <input type="radio" class="visually-hidden" name="handling" id="handling2"><label for="handling">2</label>
-              <input type="radio" class="visually-hidden" name="handling" id="handling3"><label for="handling">3</label>
-              <input type="radio" class="visually-hidden" name="handling" id="handling4"><label for="handling">4</label>
-              <input type="radio" class="visually-hidden" name="handling" id="handling5"><label for="handling">5</label>
-            </span>
+            <label for="handling"><strong>Handling:</strong></label>
+            <select name="handling" id="handling">
+              <option value="-4">-4</option>
+              <option value="-3">-3</option>
+              <option value="-2">-2</option>
+              <option value="-1">-1</option>
+              <option value="0" selected>±0</option>
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+              <option value="4">+4</option>
+            </select>
+          </div>
+      </fieldset>
+      <fieldset class="stack">
+        <legend>Superstructure</legend>
+        <div class="flex-between">
+          <strong>Hull Trauma Threshold:</strong>
+          <div>
+            <button type="button" class="display-button" aria-label="decrease hull trauma threshold" data-direction="decrease" data-value="-1" data-target="htt">-</button>
+            <button type="button" class="display-button button-text" aria-label="choose hull trauma threshold" data-htt data-min="1" data-max="999"> 1 </button>
+            <button type="button" class="display-button" aria-label="increase hull trauma threshold" data-direction="increase" data-value="1" data-target="htt">+</button>
+          </div>
+        </div>
+        <div class="flex-between">
+          <strong>System Strain Threshold:</strong>
+          <div>
+            <button type="button" class="display-button" aria-label="decrease system strain threshold" data-direction="decrease" data-value="-1" data-target="sst">-</button>
+            <button type="button" class="display-button button-text" aria-label="choose system strain threshold" data-sst data-min="1" data-max="999"> 1 </button>
+            <button type="button" class="display-button" aria-label="increase system strain threshold" data-direction="increase" data-value="1" data-target="sst">+</button>
           </div>
         </div>
       </fieldset>
       <fieldset class="stack">
-        <legend>Superstructure</legend>
-        
+        <legend>Protection</legend>
+        <div class="flex-between">
+          <strong>Defense:</strong>
+          <span class="pill">
+            <input type="radio" class="disappear" name="defense" value="0" id="defense0" checked><label for="defense0">0</label>
+            <input type="radio" class="disappear" name="defense" value="1" id="defense1"><label for="defense1">1</label>
+            <input type="radio" class="disappear" name="defense" value="2" id="defense2"><label for="defense2">2</label>
+            <input type="radio" class="disappear" name="defense" value="3" id="defense3"><label for="defense3">3</label>
+            <input type="radio" class="disappear" name="defense" value="4" id="defense4"><label for="defense4">4</label>
+          </span>
+        </div>
+        <div class="flex-between">
+          <label for="armor"><strong>Armor:</strong></label>
+          <select name="armor" id="armor">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="stack">
+        <legend>Cargo & Longevity</legend>
+        <div class="flex-between">
+          <strong>Occupants: </strong>
+          <div>
+            <button type="button" class="display-button" aria-label="decrease occupants" data-direction="decrease" data-value="-1" data-target="occupants">-</button>
+            <button type="button" class="display-button button-text" aria-label="choose occupants" data-occupants data-min="1" data-max="9999"> 1 </button>
+            <button type="button" class="display-button" aria-label="increase occupants" data-direction="increase" data-value="1" data-target="occupants">+</button>
+          </div>
+        </div>
+        <div class="flex-between">
+          <strong>Encumbrance Capaicty: </strong>
+          <div>
+            <button type="button" class="display-button" aria-label="decrease encumbrance capacity" data-direction="decrease" data-value="-1" data-target="encumbrance">-</button>
+            <button type="button" class="display-button button-text" aria-label="choose encumbrance capacity" data-encumbrance data-min="0" data-max="9999">0</button>
+            <button type="button" class="display-button" aria-label="increase encumbrance capacity" data-direction="increase" data-value="1" data-target="encumbrance">+</button>
+          </div>
+        </div>
+        <div class="flex-between">
+          <label for="consumables"><strong>Consumables: </strong></label>
+          <select name="consumables" id="consumables">
+            <option value="hours">6 hours</option>
+            <option value="days">1–6 days</option>
+            <option value="weeks">1–3 weeks</option>
+            <option value="months">1–5 months</option>
+            <option value="monthsPlus">6+ months</option>
+          </select>
+        </div>
       </fieldset>
     </form>
   </main>
