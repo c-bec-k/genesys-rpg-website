@@ -109,8 +109,8 @@ body {
 .button-text {
   border: 2px solid rgb(var(--clr-secondary-dark));
   background-color: transparent;
-
 }
+
 /*==========
 * Base styles
 ==========*/
@@ -139,7 +139,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 
 .subheading {
   margin: 1em 1em 0.25em 1em;
@@ -213,6 +212,19 @@ select {
   min-width: var(--s5);
 }
 
+
+.popup {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
 /*==========
 * Footer
 ==========*/
@@ -248,6 +260,41 @@ footer {
   padding-right: var(--fs1);
 }
 
+/* Cluster */
+
+.cluster {
+  --space: 1rem;
+  overflow: hidden;
+}
+
+.cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.cluster > * > * {
+  margin: calc(var(--space) / 2);
+}
+
+
+/* Imposter */
+
+.imposter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imposter.contain {
+  --margin: 1rem;
+  overflow: auto;
+  max-width: calc(100% - (var(--margin) * 2));
+  max-height: calc(100% - (var(--margin) * 2));
+}
 
 /* Pill */
 

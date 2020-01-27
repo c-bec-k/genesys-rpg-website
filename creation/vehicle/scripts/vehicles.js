@@ -14,14 +14,11 @@ let vehicle = {
   price: 50
 }
 
-// for ( let [key, val] of Object.entries(vehicle)) {
-//   console.log(key, val);
-// }
-
 document.addEventListener('click', buttonClick);
 document.addEventListener('input', handleInput);
 
 function buttonClick(e) {
+  console.log(e.target.dataset);
   if (e.target.dataset.direction) {
     const type = `change_${e.target.dataset.target}`;
     const payload = { value: parseInt(e.target.dataset.value), target: e.target.dataset.target }
@@ -29,7 +26,9 @@ function buttonClick(e) {
     reducer(vehicle, action);
     vehicle.price = determinePrice(vehicle);
     renderVehicle();
-  };
+  } else if (e.target.dataset.silhouette === '') {
+    renderSilhouetteChoice(vehicle.silhouette);
+  }
 }
 
 function reducer(state, action) {
@@ -79,4 +78,8 @@ function handleInput(e) {
   vehicle[name] = (name === 'consumables') ? value : parseInt(value);
   vehicle.price = determinePrice(vehicle);
   renderVehicle();
+}
+
+function renderSilhouetteChoice(currentSilhouette) {
+  
 }

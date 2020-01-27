@@ -11,7 +11,8 @@ const maxSpeed = new Map([
   [1, 0],
   [2, 1000],
   [3, 2500],
-  [4, 5000]
+  [4, 5000],
+  [5, 10000]
 ]);
 
 const handling = new Map([
