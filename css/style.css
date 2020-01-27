@@ -330,21 +330,6 @@ footer {
   justify-content: flex-start;
 }
 
-/*==========
-*
-* Vehicle Creation
-*
-==========*/
-
-.vehicle-number {
-  font-size: 2rem;
-  width: 2.25em;
-  /* height:2.5em; */
-}
-
-#handling[aria-checked="false"] > span:last-child { display: none; }
-#handling[aria-checked="true"] > span:first-child { display: none; }
-
 
 /*==========
 *
