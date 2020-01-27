@@ -103,7 +103,7 @@ body {
   display: inline-block;
   font-size: var(--fs1);
   height: var(--s4);
-  width: var(--s4);
+  width: var(--s5);
 }
 
 .button-text {
