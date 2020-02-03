@@ -19,7 +19,7 @@
         <legend>Silhouette</legend>
         <div class="center">
         <button type="button" class="display-button" aria-label="decrease silhouette" data-direction="decrease" data-value="-1" data-target="silhouette">-</button>
-        <button type="button" class="display-button button-text" aria-label="choose silhouette" data-silhouette data-min="1" data-max="10"> 2 </button>
+        <span class="sil-span" data-silhouette data-min="1" data-max="10"> 2 </span>
         <button type="button" class="display-button" aria-label="increase silhouette" data-direction="increase" data-value="1" data-target="silhouette">+</button>
         </div>
       </fieldset>
@@ -56,15 +56,16 @@
           <strong>Hull Trauma Threshold:</strong>
           <div>
             <button type="button" class="display-button" aria-label="decrease hull trauma threshold" data-direction="decrease" data-value="-1" data-target="htt">-</button>
-            <button type="button" class="display-button button-text" aria-label="choose hull trauma threshold" data-htt data-min="1" data-max="999"> 1 </button>
+            <input class="center box display-button" type="number" name="htt" data-htt data-input="htt" value="1" min="1">
             <button type="button" class="display-button" aria-label="increase hull trauma threshold" data-direction="increase" data-value="1" data-target="htt">+</button>
           </div>
         </div>
+        
         <div class="flex-between">
           <strong>System Strain Threshold:</strong>
           <div>
             <button type="button" class="display-button" aria-label="decrease system strain threshold" data-direction="decrease" data-value="-1" data-target="sst">-</button>
-            <button type="button" class="display-button button-text" aria-label="choose system strain threshold" data-sst data-min="1" data-max="999"> 1 </button>
+            <input class="center box display-button" type="number" name="sst" data-input="sst" data-sst value="1" min="1">
             <button type="button" class="display-button" aria-label="increase system strain threshold" data-direction="increase" data-value="1" data-target="sst">+</button>
           </div>
         </div>
@@ -101,7 +102,7 @@
           <strong>Occupants: </strong>
           <div>
             <button type="button" class="display-button" aria-label="decrease occupants" data-direction="decrease" data-value="-1" data-target="occupants">-</button>
-            <button type="button" class="display-button button-text" aria-label="choose occupants" data-occupants data-min="1" data-max="9999"> 1 </button>
+            <input class="center box display-button" type="number" name="occupants" data-input="occupants" data-occupants value="1" min="1">
             <button type="button" class="display-button" aria-label="increase occupants" data-direction="increase" data-value="1" data-target="occupants">+</button>
           </div>
         </div>
@@ -109,7 +110,9 @@
           <strong>Encumbrance Capaicty: </strong>
           <div>
             <button type="button" class="display-button" aria-label="decrease encumbrance capacity" data-direction="decrease" data-value="-1" data-target="encumbrance">-</button>
-            <button type="button" class="display-button button-text" aria-label="choose encumbrance capacity" data-encumbrance data-min="0" data-max="9999">0</button>
+            <input class="center box display-button" type="number" name="encumbrance" data-input="encumbrance" data-encumbrance value="1"
+              min="1">
+            <!-- <button type="button" class="display-button button-text" aria-label="choose encumbrance capacity" data-encumbrance data-min="0" data-max="9999">0</button> -->
             <button type="button" class="display-button" aria-label="increase encumbrance capacity" data-direction="increase" data-value="1" data-target="encumbrance">+</button>
           </div>
         </div>
@@ -125,6 +128,13 @@
         </div>
       </fieldset>
     </form>
+    <div class="stack full-bleed hidden">
+        <div class="stack box border-main center">
+          <h2 data-modal-title>Select the Vehicle's HTT</h2>
+          <input type="number" required min="1" name="modal" value="1" class="center">
+          <button type="submit" data-modal-submit class="center">Set HTT</button>
+        </div>
+    </div>
   </main>
 </body>
 <footer class="small">

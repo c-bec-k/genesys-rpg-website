@@ -11,14 +11,13 @@ let vehicle = {
   occupants: 1,
   consumables: 'hours',
   encumbrance: 0,
-  price: 50
+  price: 1000
 }
 
 document.addEventListener('click', buttonClick);
 document.addEventListener('input', handleInput);
 
 function buttonClick(e) {
-  console.log(e.target.dataset);
   if (e.target.dataset.direction) {
     const type = `change_${e.target.dataset.target}`;
     const payload = { value: parseInt(e.target.dataset.value), target: e.target.dataset.target }
@@ -28,7 +27,7 @@ function buttonClick(e) {
     renderVehicle();
   } else if (e.target.dataset.silhouette === '') {
     renderSilhouetteChoice(vehicle.silhouette);
-  }
+  } 
 }
 
 function reducer(state, action) {
@@ -50,9 +49,14 @@ function reducer(state, action) {
 }
 
 function renderVehicle() {
-  ["price", "silhouette", "htt", "sst", "occupants", "encumbrance"].forEach( elem => {
+  ["price", "silhouette", "occupants", "encumbrance"].forEach( elem => {
     document.querySelector(`[data-${elem}]`).innerText = vehicle[elem];
+  });
+  ['htt', 'sst', 'occupants', 'encumbrance'].forEach( el => {
+    document.querySelector(`input[name="${el}"`).value = vehicle[el]  
   })
+  // document.querySelector('input[name="htt]').value = vehicle.htt;
+  // document.querySelector('input[name="sst]').value = vehicle.sst;
 }
 
 function modify(direction, target) {
@@ -68,8 +72,6 @@ function modify(direction, target) {
     adjusted = (direction === 1) ? current+1 : current-1;
   }
   vehicle[target] = adjusted;
-  // el.innerText = state[target];
-  // console.log(vehicle)
 }
 
 
@@ -80,6 +82,4 @@ function handleInput(e) {
   renderVehicle();
 }
 
-function renderSilhouetteChoice(currentSilhouette) {
-  
-}
+renderVehicle();
