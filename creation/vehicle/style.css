@@ -107,6 +107,10 @@ input[type=number] {
   white-space: nowrap; /* added line */
 }
 
+.disappear {
+  display: none;
+}
+
 .sil-span {
   display: inline-block;
   text-align: center;
