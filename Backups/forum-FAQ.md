@@ -2,11 +2,31 @@
 
 This is a copy/paste of all the FAQs asked and answered by the devs. Originally found on the [official forum](https://community.fantasyflightgames.com/topic/264720-faq/), they have been migrated here to save in case the forum get shut down.
 
+## Android
+
+**Question:** Does broken ice reactivates automatically at the end of the runner's next turn or does the Sysop needs to use the Activate Program maneuver to reactivate ice?
+
+**Answer:** It reactivates automatically. Hope this helps!
+
+**Question:** The O2 bottle (page 103) allows a character to avoid the effects of suffocation for up to 10 minutes. This is talking about narrative play, however this game treats certain effects that have a timing of 1 round to be 5 minutes in narrative time. Therefore my question is, in structured play, does the O2 bottle last for 2 rounds?
+
+**Answer:** I think it's fair to assume that an O2 bottle would last for the duration of a single encounter in structured time. However, if the encounter is stretching on for a significant length of time (5 or more rounds0, you can rule that the O2 bottle starts to run out. Alternatively, you can just have it run out because of Threat or Despair!
+
+**Question:** Stacking items that increase encumbrance. For reference I'm mainly referring to page 96 in Shadow Of The Beanstalk & the Cross-Body Bag, Load-Bearing Gear, Modular Backpack, and Utility Belt. Can all of these items be stacked, or is there some limit? 18 encumbrance (before Brawn) seems really high.
+
+**Answer:** The limit should be determined by realistically what your character could wear. So a cross-body bag and a modular backpack would be hard to combine, for example. But a utility belt and modular backpack make a lot more sense!
+
 ## Character Creation
 
 **Question:** I love the flexibility in Genesys' character creation so I pondered to go a step further and have my players decide on the class skills themselves and then let them define the "class" or "role" depending on the choice of skills. Would it be appropriate to have the players choose 8 "class" skills freely instead of building classes in advance with a pre defined set of class skills?
 
 **Answer:** Sure, I think that would be totally reasonable! As long as you sit down with your players beforehand and talk about what kind of game you're going to run, I can't see any problem with it.
+
+**Question:** On page 15 of the Genesys Core Rulebook, the sidebar mentions that characteristics have a "soft cap" of 5. What is the hard cap?
+
+**Answer:** There is no hard cap, just very few ways to increase a characteristic beyond 5 (and it's something we strongly discourage you do except in some rare cases). For example, some cybernetics in the science fiction setting allow you to increase a characteristic to 6, but they do not stack (you can't use two cybernetics to increase the same characteristic twice) and they come with drawbacks (decreased strain threshold).
+
+In designing your own setting, if in doubt we recommend keeping your characters at a 5 max.
 
 ## Combat
 
@@ -106,13 +126,19 @@ This is something we have fixed in future printings, and will be addressing in o
 
 **Answer:** The Hand Cannon should have Rarity 5.
 
+**Question:** For the Prepare item quality on weapons, is it intended to be once per combat check or once period?
+
+If a weapon has Prepare 1, do I have to prepare before each attack or is it one prepare and I can make as many combat checks as I want?
+
+**Answer:** You prepare before making combat checks in general—within the bounds of common sense. Prepare is supposed to represent a certain amount of setup or prep that goes into firing or using a weapon (anything from getting your feet set to deploying special sensors). So generally, once it’s prepared, you can just make attacks with it. However, there may be some circumstances in which your GM could require you to spend those prepare maneuvers again. Those circumstances are going to be fairly limited, such as "I want to haul this missile launcher to a different part of the battlefield, then shoot something else."
+
 ## Magic
 
 **Question:** In the new Genesys RPG, do magic casters pay an Advantage cost to activate additional effects they've already purchased for a spell with a difficulty increase to the spell? (e.g. If a character purchases the Blast, Fire, and Range upgrades for an attack spell, making the spell Daunting difficulty, must they then also pay Advantages to activate Burn and Blast?)
 
 **Answer:** That is correct.
 
-**Question:**How can mind affecting spells like D&Ds Charm Person (makes target feeling friendly towards caster) or Suggestion (makes target feel the proposal of the caster sounds perfectly reasonable) or illusions (making target believe something to be real) be created? They do not seem to fit to any of the base spells.
+**Question:** How can mind affecting spells like D&Ds Charm Person (makes target feeling friendly towards caster) or Suggestion (makes target feel the proposal of the caster sounds perfectly reasonable) or illusions (making target believe something to be real) be created? They do not seem to fit to any of the base spells.
 
 **Answer:** Unless you want to invent your own spells (which you, of course, are more than welcome to do!) I would recommend that you repurpose Curse and Conjure. Between pages 212 and 214 we discuss more narrative ways to use the various spells, and you may find some advice there on how to use Curse to create mind-effecting spells, and use Conjure to create illusions.
 
@@ -124,7 +150,7 @@ Charm Person is a bit harder (since it governs an entire state of mind), so I wo
 
 For Illusions, I would just treat it as if you were summoning a creature. However, since it's just an illusion, you could forgo the Summon Ally upgrade, and still have the illusions do whatever you want them to. After all, they wouldn't be able to hurt anyone. Again, you can apply any other upgrades as normal.
 
-**Question:** Does the empowered effect of the magic attack also influence the damage burn quality dealt? I was told that knowledge 5 provided,the burn damage is doubled up to 10 instead the usual 5 in this case. Is this true or does empower only apply to the initial damage?
+**Question:** Does the empowered effect of the magic attack also influence the damage burn quality dealt? I was told that knowledge 5 provided the burn damage is doubled up to 10 instead the usual 5 in this case. Is this true or does empower only apply to the initial damage?
 
 **Answer:** Empowered effectively increase's the attack's base damage, and the Burn quality deals the attack's base damage again over subsequent rounds. So yes, it would affect the Burn quality's damage.
 
@@ -136,13 +162,13 @@ For Illusions, I would just treat it as if you were summoning a creature. Howeve
 
 **Answer:** The concentrate maneuver sustains one spell. You can perform multiple concentrate maneuvers to sustain multiple spells, within the maneuver limit.
 
-**Question:** In Genesys magic systems. Does taking damage beyond soak break concentration?
+**Question:** Does taking damage beyond soak break concentration? What about spell-casting (ie. taking a magic action)?
 
 **Answer:** Not as the rules are written, no. If you want to implement some sort of rule like that in your own setting, I might recommend only have concentration be broken if the character suffers a critical injury (since taking damage happens fairly often).
 
-**Question:** In Genesys magic systems. Does spell-casting (ie. taking a magic action) break concentration?
+**Question:** I was curious about the rules concerning defense. Does ranged defense apply against attack spells? It looks like general defense applies to attack spells, but what of ranged defense? If ranged defense does not apply to attack spells, then how should one determine how much of a pre-made adversary profile's melee and ranged defenses are general defense?
 
-**Answer:** No.Not concentrating anymore break concentration.It's just a maneuver you choose to perform or not in order to sustain a spell that allows it
+**Answer:** You can think of attack spells, specifically as combat checks just like shooting a gun  (albeit a gun shooting blue bolts of arcane energy or fireballs). So ranged defense does apply to those attacks.
 
 **Question:** In a previous question about whether or not Ranged Defense was applicable against Magic Attacks it was stated that Magic Attacks were like Ranged attacks in that regard and that Ranged Defense does apply to the roll. Can you please explain what things effect a magic attack, is it all things that would affect ranged attacks, such as the penalties for 'Making Ranged Attacks At Engaged Targets' or 'Making Ranged Attacks While Engaged'? Does the Close Combat effect change the attack to a melee attack or just allow the ability to target an engaged opponent? How do talents affect the dice pool of a Magic Attack, such as Side Step, Defensive Stance, Dodge, etc.?
 
@@ -157,13 +183,14 @@ For Illusions, I would just treat it as if you were summoning a creature. Howeve
 **Question:** Can the Primal skill be used for a Heal (Resurrection) spell? Page 70 of the core rulebook says that Primal cannot be used to "raise or reanimate the dead," but in page 218, Resurrection is open to Primal. Which page is correct?
 
 **Answer:** "Raising or reanimating the dead" in this case refers to the necromantic practice of animating dead bodies in a grotesque parody of life, not restoring one's comrades to full health from the cold embrace of the grave.
+
 So yes, you can use Resurrection with Primal.
 
-**Question:** Hi! I got three questions about RoT rules.
+**Question:** Three questions about magic rules:
 
 1. First one is concerning a Curse Doom spell effect. It is written that you cannot touch dice showing Triumph or Despair symbols. But can you change Proficiency or Challenge dice faces to show such symbols? For example, on Proficiency die I rolled two advantage symbols. Can I change it to the Triumph?
 2. Second question is about Conjure spells. I got some trouble understanding the scope of this spell action. What type of creatures my players can summon? Using this spell can they summon everything that exists in Terrinoth? Even dwarf soldiers or human mages? Or can a two-handed weapon they Conjure be magical?
-3. Last but not least, this question is connected with a previous one. Summoned creatures got statistics as described in the RoT books? Or should stats depend on Mages ranks in Knowledge (Lore)? Thanks in advance!
+3. Last but not least, this question is connected with a previous one. Summoned creatures got statistics as described in the books? Or should stats depend on Mages ranks in Knowledge (Lore)? Thanks in advance!
 
 **Answer:** Hi! In order…
 
@@ -171,6 +198,53 @@ Yes, you could change the facing on a die from an Advantage to a Triumph, or a T
 You can only summon minions (or rivals with the additional effect), but the GM has the final say on what would be allowed here. In general any NPC listed as a minion (or rival with the additional effect) would usually be ok. Weapons would be mundane types, so no magic weapons (though a weapon appearing out of thin air would certainly appear magical to others!). You and your GM can create new versions of Conjure or new additional effects to summon more powerful allies or magical items too.
 
 Summoned creatures would use their appropriate profile, yes. So a summoned Reanimate would use the profile from Realms of Terrinoth. Remember though that these aren't the real thing—they are magically created simulacrum of that creature/item.
+
+**Question:**  I have two questions about magic implement materials from the new Terrinoth book. Are the prices accurate? A bone implement, for example, is better than oak and is half the cost? Or is that x1/2 supposed to be x1.5 (x1-1/2)?
+
+**Answer:** Those are typos. Bone, Hazel, and Yew should all be Cost x 1.5 (original cost, plus half the cost).
+
+**Question:** Wizard and mage PCs cannot turn invisible or fly since they don't get access to Augment spells, is that true? How can a Wizard cast such a spell?
+
+**Answer:** It depends on how you qualify magic like invisibility or flying, but yes, if you consider them to be an Augment type spell, then using the rules as presented in Genesys, spellcasters using Arcana would not be able to do those things.
+
+However, the magic rules as presented in Genesys are designed to be a template and a starting point for your own games, and do not have to be used unaltered. Specifically, we designed these rules so that there would be three magic skills that each had benefits and drawbacks. In your game, you may want spellcasters who use Arcana ("wizards") to have a more wide-ranging spell catalog. In that case, you can certainly give them access to Augment, or even create a new spell type that allows them to do these things (maybe call it Enhance, or Alter).
+
+**Question:** With the magic spell heal, can you target yourself? The heal spell is missing the verbiage that other self-targetable spells have. Wondering if that's intentional or an oversight. Thanks!
+
+**Answer:** You can target any engaged character, including yourself.
+
+**Question:** Can a single threat, used to cancel a maneuver, be used to end a spell that has had the concentration maneuver used to sustain it? For example, if a PC has a barrier spell up can a single threat on that PC be used to end the barrier he/she cast 3 rounds prior but was sustaining via concentration maneuver?
+
+**Answer:** A single threat seems a bit low for that effect; however the final arbitrator of whether that is possible is the GM. If your GM decides that's what happens, then that's their prerogative.
+
+**Question:** Regarding the Barrier Magic Attribute "Reflection" on page 219 of the Genesys Core Rulebook.
+
+Reflection reads: If an opponent makes a magic attack against and effected target and generates 3 threat or 1 despair on the check, after the check is resolved, they suffer a hit dealing damage equal to the total damage of the attack.
+
+However, on page 211, under 'Spending threat and despair on magic skill checks', the options for 3 threat read 'The spell is slightly more powerful than expected, one character of the GMs choice is targeted or otherwise affected by the spell as well'
+
+So, isn't the default effect of 3 threat already more powerful than the benefit of the barrier reflection? If the GM were to select the 'caster' as the additional target, the effects seem identical. Alternatively the GM could select another target, making the default 3 threat option less restricted than the benefit afforded by Barrier Reflect. Is this correct? Should barrier reflect be applying to non-magic attacks instead? Note: On page 166 of the Realms of Terrinoth book, the Necromancer 'Wall of Bones' spell has a Reflect ﻿component that applies to both magic and non-magic attacks.
+
+**Answer:** The Reflection attribute as listed in the Genesys core rulebook is correct. It is true that Threat can be spent to cause additional targets to be affected by a spell, which does mean that the one can end up with the same result. This is also correct.
+
+The two really shouldn't be compared side by side because one (the Reflection option) is under the control of the player, while the other (the option in Table III.2—4) is under the control of the GM. The second option also applies to any spell cast (including healing, augmentations, etc), and can target any other character in the encounter (not just the caster or their target). But the player isn't going to be able to be the one who selects who the second target is going to be under the spending Threat option in Table III.2—4, so it's not an ability they can count on or control.
+
+The Reflection attribute does not work against ranged attacks. The Necromancer's spell in the Realms of Terrinoth does, but that is a specific spell for a specific NPC, and thus does not necessarily follow the same rules.
+
+**Question:** When a character casts a Conjure spell during encounter with a Summon Ally effect, on page 217 GCRB it is written that: "The character may spend a maneuver to direct the creature, allowing them to determine its action and maneuver." Does the character have to perform the maneuver to direct the creature every following turn? Or a single maneuver with "Attack" command is enough for the duration of an encounter?
+
+Secondly, can a character summon two creatures/items (different type or not) by performing a Conjure magic action two times? Or the second Conjure spell "replaces" the effects of the first spell?
+
+**Answer:** Your character must spend a maneuver each turn to direct the summoned creature to perform an action and a maneuver. Your character may summon two (or more) creatures at once.
+
+**Question:**
+
+1. So as I understand, the creature won't continue attacking an opponent unless I perform a maneuver each turn even if it fits their instincts. Is that correct?
+2. For example, my Player wants to summon a bear, but later he decides to summon another bear with second Conjure action while still maintaining the first spell. Can a character concentrate on two different Conjure spells at the same time or the second Conjure spell "replaces" the effects of the first spell?
+
+**Answer:** With a literal interpretation of the rules, no the creature will not. How it behaves is up to the GM, and that might involve attacking its original target, or it might suddenly run away, hide, attack the summoner, or get bored and start sniffing around its environment. This caveat exists so that players do not abuse the summoning rules. They may engineer a situation where the creature gets put into a situation where it has no choice but to fight, or its very presence is all the player needs! But the only way to guarantee that it does what the player wants is to direct it, and GMs should highlight the uncertainty of summoning creatures otherwise.
+
+Your player can summon two creatures and concentrate on both of them, provided they have the maneuvers to do so!
 
 ## Skills
 
@@ -210,11 +284,33 @@ To your second question, yes, combat and magic skills are restricted when purcha
 
 Also, if you want to do this, I would recommend making sure that all of your species-specific options feel balanced with each other. This doesn't just mean that each gets the same number of choices (although that is very important), but also that all of the choices feel equally interesting. They don't have to all do the same thing, but they should all get players excited to try them. For that, you're probably going to have to rely on playtesting with your group!
 
-**Question:** Hi again guys, I was looking through the list of suggested talents in the RoT supplement and noticed Toughened missed the list, I assume its a mistake but I thought I had better ask anyway.
+**Question:** Hello, regarding the Tier 3 "Dual Strike" talent in Realms of Terrinoth, I was hoping for clarification. Do the weapons wielded need to be Melee weapons? Or can they be any two weapons, as long as you are attacking while in an engagement?
 
-**Answer:** Hi Richard! Yes, Toughened was missing; in general, any of the "use in any setting" talents from Genesys should be ok to use in Terrinoth.
+**Answer:** Both weapons must be used as part of a melee attack, as described in the sidebar on page 103 of the Genesys Core Rulebook (an attack made in close combat with an opponent, and with a weapon designed for use in close combat). Generally, this means a weapon that uses Brawl or Melee (Light), but it's not restricted to a particular skill, since GMs may introduce additional combat skills to their game.
+
+**Question:**  I was wondering about the Finesse and Precision talents from Realms of Terrinoth. Does Finesse allow you to use Agility in place of Brawn for damage purposes? Does Precision allow you to use Cunning in place of Brawn for damage purposes?
+
+**Answer:** You still would use Brawn for the damage. You strike in an agile or precise way, but how hard you hit is still up to your brawniness.
+
+**Question:** The Master Tier 5 talent says: Once per round, your character may suffer 2 strain to use this talent to reduce the difficulty of the next check they make using that skill by two, to a minimum of Easy.
+
+If upgraded dice are used to determine the difficulty, how is the difficulty reduced by two? Are upgraded dice downgraded which counts as one reduction itself?
+
+**Answer:** Reducing the difficulty of the check is not the same as "removing dice" (even though the effect is similar). So you actually reduce the difficulty of the check before you upgrade or downgrade the check, so upgraded dice shouldn't matter.
+
+**Question:** The Tier 2 talent Heightened Awareness (p76) it states that allies in short range of the character who possess this talent gain [B] and if engaged they get [B][B]. How does the character with the talent benefit from that talent? I’m looking for what mechanical effects. [B]? [B][B]?
+
+**Answer:** Only allies benefit from this talent; the character does not.
 
 ## Terrinoth
+
+**Question:** I was looking through the list of suggested talents in the RoT supplement and noticed Toughened missed the list, I assume its a mistake but I thought I had better ask anyway.
+
+**Answer:** Yes, Toughened was missing; in general, any of the "use in any setting" talents from Genesys should be ok to use in Terrinoth.
+
+**Question:** Should the Dungeneer talent allow you to cancel Threat symbols and not Advantage symbols?
+
+**Answer:** Yes, it should be threat.
 
 **Question:** Hi guys, I was wondering how you pronounce Ynfernael?
 
@@ -224,21 +320,39 @@ Also, if you want to do this, I would recommend making sure that all of your spe
 
 **Answer:** An item can only be of one type of craftsmanship, so the effects would not stack. With the Improved effect of Signature Weapon, if you choose to "reveal" the weapon's Ancient craftsmanship, the effects of Ancient craftsmanship replace the effects of the original craftsmanship.
 
-**Question:** Hello! Just wanted to know, why Druidic Circlets and Magic Rings implements didn't make it to Realms of Terrinoth book (Table 2-8)? Thanks in advance!
+**Question:** Hello! Just wanted to know why Druidic Circlets and Magic Rings implements didn't make it to Realms of Terrinoth book (Table 2-8)? Thanks in advance!
 
 **Answer:** Hi! Basically, we viewed these as not really part of the Terrinoth setting and we wanted to devote the space they would have taken in the book to other subjects. You're free to adopt these into your games if desired, of course. You could even incorporate runebound shard magic into them as well to make some really unique items!
 
 **Question:** Hello, There are several beautiful maps in the Realms of Terrinoth book - however there is nothing by which to judge scale. Is there any sort of scale available so that rough distances can be determined?
 
-**Answer:** Hi Josh! We imagine Terrinoth (page 139) around 250 leagues across at its widest point (roughly 900 miles). Travel time in days is likely more an issue, and our benchmark is 5 leagues per day on foot on average.It probably would take 7 or so weeks to cross it on foot (3-4 on horseback), and several days to travel from Tamalir to Greyhaven that way. This is something the GM can change, though, to best fit the game and the plot. One GM might have Terrinoth as big as the US, another the size of Europe, a third eh size of France. And all are perfectly fine.
-
-We're discussing this here and may add some guidance along these lines either in a reprint or online. It's a great question and thanks for bringing it up Josh!
+**Answer:** We imagine Terrinoth (page 139) around 250 leagues across at its widest point (roughly 900 miles). Travel time in days is likely more an issue, and our benchmark is 5 leagues per day on foot on average.It probably would take 7 or so weeks to cross it on foot (3-4 on horseback), and several days to travel from Tamalir to Greyhaven that way. This is something the GM can change, though, to best fit the game and the plot. One GM might have Terrinoth as big as the US, another the size of Europe, a third eh size of France. And all are perfectly fine.
 
 **Question:** Realms of Terrinoth, page 91, the Conduit talent. Am I reading this right, that it's a manoeuvre to activate the talent than another manoeuvre to cast the spell? Or is it supposed to be 'Activation: Passive' and I can just spend that Story Point to cast as a manoeuvre and still do something else with my second manoeuvre?
 
-**Answer:** Hi Christopher! It should actually be Active (Incidental); you don't need to spend a maneuver just to utilize Conduit, just a maneuver to do the magic action.
+**Answer:** It should actually be Active (Incidental); you don't need to spend a maneuver just to utilize Conduit, just a maneuver to do the magic action.
 
 We'll get this corrected in the next reprint. Thanks for emailing us about it and thanks also for playing!
+
+**Question:** Page 108 gives two different Hard Point requirements for the Spikes armor attachment. The table says 2 but the description says 1. Which is correct?
+
+**Answer:** "1" is correct.
+
+**Question:** When a character is mounted as laid out in Realms of Terrinoth, does the character's and/or mount's silhouette change?
+
+**Answer:** The silhouette is the same as the mount's value. A person on a horse is pretty much the size of a horse, and so on.
+
+**Question:** Are "Encouraging Song" and "Dissonance" talents considered spells? If using Verse, does the PC have to spend 2 strain like other spells, and would the harsher threat/Despair results apply? For a character using a willow instrument, could they gain the extra advantage, or is that only for Augment, Curse, Heal, Dispel and Utility?
+
+**Answer:** Neither of those are spells, so you don't need to spend strain to use them, don't get benefits from implement materials, etc.
+
+**Question:** Is "Second Wind" meant to have been left out of Realms of Terrinoth for balance reasons?
+
+**Answer:** Second Wind isn't in the talents list, but that shouldn't stop your group from adding it in if everyone is cool with it!
+
+**Question:** The speed potion in Realms of Terrinoth. When it says you get another maneuver, is that a maneuver free? E.g. if my character uses a speed potion and assuming he's using an action on his turn, does that afford him strain free maneuvers with the option of spending 2 strain for the third? Or is that 1 free maneuver, and 2 strain for each extra maneuver, doing a total of 4 strain if the character uses all 3?
+
+**Answer:** They get the second one free, but have to spend strain to do the third (like someone else would do for taking a second one). Then they get hit for 6 after 3 turns.
 
 ## Vehicles
 
@@ -253,3 +367,27 @@ As for planetary scale, planetary scale doesn't change the scale of the range ba
 **Answer:** Rules as written, you would just move the bands no matter what. However, I agree that strategic to extreme is really far, as is extreme to long. Also, when dealing with range bands like extreme or strategic, they can encompass a sizable distance "within" the band. Simply put, although two things may be at strategic range to you, one might still be a bit closer than the other.
 
 So if you want to count a move from strategic to extreme or extreme to long as moving "2" of your 4 range bands (and your GM agrees!) that would be very reasonable.
+
+**Question:** Does Vicious add to vehicular critical hits? On page 231, it says that "Effects that apply to the results of Critical Injuries, such as the Vicious quality, do not apply to Critical Hit…." However, the Vicious item quality specifies that (page 89), "[w]hen an attack with this weapon results in a Critical Injury or Hit, the character adds ten times the Vicious rating to the Critical roll." I am assuming that the quality write up is correct, but would just like to double check. Thanks!
+
+**Answer:** The Vicious quality is correct.
+
+**Question:** Are the Pilot-Only Actions the only way to make a vehicle move?
+
+**Answer:** They are (save for the forced movement of traveling at a certain speed).
+
+**Question:** The addition to the Reposition Pilot-Only maneuver in the latest Errata says, "The pilot may move the vehicle up to one range band". Does this include moving into Engaged range and moving within a range band (i.e. Short to Short)?
+
+**Answer:** Yes.
+
+**Question:** Can the range bands from Forced Movement be used to enter Engaged ranged?
+
+**Answer:** Yes.
+
+**Question:** With regard to vehicle rules, I've been wondering about the effect of difficult terrain on the forced move a vehicle must make each turn in structured encounters, according to its speed (CRB page 221, Table III.2-14). We know that difficult terrain requires twice as man maneuvers to cross (unless a talent like All-Terrain Driver is implemented), and also adds Setback dice to skill checks made while traversing it. I'm just curious as to whether the terrain could affect the velocity (represented by the forced move) by perhaps halving the number of range bands (rounded up) that must be covered? Because from experience, covering broken terrain in a vehicle - be it in a Humvee, truck, or main battle tank - you can't just go full out unless you know what you're doing (having a specific talent) or you're skillful enough to maneuver that beast (driving/piloting skill). I'm thinking that, if a PC doesn't have a talent such as All-Terrain Driver, a Dangerous Driving action, if successful, should allow the driver/pilot to mitigate the effects of terrain for that turn only, with subsequent checks being required each following turn as long as the GM rules the vehicles are still in the badlands, swamp, what have you.
+
+**Answer:** The forced movement would also be affected by difficult terrain.
+
+**Question:** On page 61 of the EPG, it says to use the rules on page 197 of the CRB to make planetary scale weapons. However, the weapon creation rules don't encompass damage values of 1–3 nor does it have a price for strategic range. How should we address this?
+
+**Answer:** The additional cost for damage 1-3 should be 0. Use the cost for extreme range for strategic range as well.
