@@ -12,6 +12,8 @@ const lowLow = [100, 250];
 
 const lowHigh = [250, 500];
 
+const highLow = [250, 500];
+
 const highHigh = [1000, 2000];
 
-export { soak, defense, encumbrance, reinforced, hardPoints, lowLow, lowHigh, highHigh };
+export { soak, defense, encumbrance, reinforced, hardPoints, lowLow, highLow, lowHigh, highHigh };

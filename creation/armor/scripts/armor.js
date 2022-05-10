@@ -11,9 +11,12 @@ const getbasePrice = (formData) => {
 const getPriceMod = (formData) => {
   const soak = parseInt(formData.get('soak'));
   const defense = parseInt(formData.get('defense'));
-  if (soak === 0 || defense === 0) return [0,0]
+  console.log(`Soak: ${soak}; Defense: ${defense}`);
+  if (soak === 0 || defense === 0) return [0,0];
   const soakName = soak > 1 ? 'high' : 'low';
   const defenseName = defense > 3 ? 'High' : 'Low';
+  console.log(`Soak Name: ${soakName}; Defense Name: ${defenseName}`);
+  console.log(prices[`${soakName}${defenseName}`]);
   return prices[`${soakName}${defenseName}`];
 }
 
