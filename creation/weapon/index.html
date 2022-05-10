@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="./scripts/weapon.js"></script>
+  <title>Genesys RPG | Weapon Price Calculator</title>
+</head>
+<body>
+  <nav><a href="/">Home</a></nav>
+  <h1>Calculate Weapon Price</h1>
+  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-show-price>0</span></div>
+
+  <main class="measure">
+    <h2 class="subheading">Choose Your Options</h2>
+    <form id="form">
+      <fieldset>
+        <legend>Skill</legend>
+        <div class="pill-slider">
+          <input type="radio" name="skill" id="brawl" value="Brawl" checked> <label for="brawl" class="pill-label__text big-label small">Brawl</label>
+          <input type="radio" name="skill" id="melee" value="Melee"> <label for="melee" class="pill-label__text big-label small">Melee</label></li>
+          <input type="radio" name="skill" id="melee-heavy" value="Melee (Heavy)"> <label for="melee-heavy" class="pill-label__text big-label small">Melee (Heavy)</label>
+          <input type="radio" name="skill" id="melee-light" value="Melee (Light)"> <label for="melee-light" class="pill-label__text big-label small">Melee (Light)</label>
+        </div>
+        <div class="pill-slider">
+          <input type="radio" name="skill" id="gunnery" value="Gunnery"> <label for="gunnery" class="pill-label__text big-label small">Gunnery</label>
+          <input type="radio" name="skill" id="ranged" value="Ranged"> <label for="ranged" class="pill-label__text big-label small">Ranged</label>
+          <input type="radio" name="skill" id="ranged-heavy" value="Ranged (Heavy)"> <label for="ranged-heavy" class="pill-label__text big-label small">Ranged (Heavy)</label>
+          <input type="radio" name="skill" id="ranged-light" value="Ranged (Light)"> <label for="ranged-light" class="pill-label__text big-label small">Ranged (Light)</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Range</legend>
+        <div class="pill-slider">
+          <input type="radio" name="range" id="engaged" value="engaged" checked><label for="engaged" class="pill-label__text big-label small">Engaged</label>
+          <input type="radio" name="range" id="short" value="short"><label for="short" class="pill-label__text big-label small">Short</label>
+          <input type="radio" name="range" id="medium" value="medium"><label for="medium" class="pill-label__text big-label small">Medium</label>
+        </div>
+        <div class="pill-slider">
+          <input type="radio" name="range" id="long" value="long"><label for="long" class="pill-label__text big-label small">Long</label>
+          <input type="radio" name="range" id="extreme" value="extreme"><label for="extreme" class="pill-label__text big-label small">Extreme</label>
+          <input type="radio" name="range" id="strategic" value="strategic"><label for="strategic" class="pill-label__text big-label small">Strategic</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Damage</legend>
+        <div class="pill-slider">
+          <button type="button" class="pill-label damage--select" data-change="-" data-target="damage">–</button>
+          <div class="pill-label damage--select" data-show-damage>5</div>
+          <input type="number" value="5" min="1" max="25" id="damage" tabindex="-1">
+          <button type="button" class="pill-label damage--select" data-change="+" data-target="damage">+</button>
+        </div>
+        <div class="pill-slider">
+          <input type="checkbox" class="checkbox" id="brawn-based" name="brawn-based" />
+          <label for="brawn-based"><strong>Brawn-Based</strong></label>
+        </div>
+      
+      </fieldset>
+
+      <fieldset>
+        <legend>Critical Rating</legend>
+        <div class="main-flex">
+          <span class="pill-slider">
+            <input type="radio" id="critical-0" name="critical" value="0" /><label class="big-label pill-label"
+              for="critical-0">0</label>
+            <input type="radio" id="critical-1" name="critical" value="1" /><label class="big-label pill-label"
+              for="critical-1">1</label>
+            <input type="radio" id="critical-2" name="critical" value="2" /><label class="big-label pill-label"
+              for="critical-2">2</label>
+            <input type="radio" id="critical-3" name="critical" value="3" checked /><label class="big-label pill-label"
+              for="critical-3">3</label>
+            <input type="radio" id="critical-4" name="critical" value="4" /><label class="big-label pill-label"
+              for="critical-4">4</label>
+              <input type="radio" id="critical-5" name="critical" value="5" /><label class="big-label pill-label" for="critical-5"
+              >5</label>
+              <input type="radio" id="critical-6" name="critical" value="6" /><label class="big-label pill-label" for="critical-6"
+              >6</label>
+          </span>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Item Qualities</legend>
+        <div class="quality-grid">
+          <strong>Accurate:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="accurate-0" name="accurate" value="0" checked /><label class="big-label pill-label"
+              for="accurate-0">0</label>
+            <input type="radio" id="accurate-1" name="accurate" value="1" /><label class="big-label pill-label"
+              for="accurate-1">1</label>
+            <input type="radio" id="accurate-2" name="accurate" value="2" /><label class="big-label pill-label"
+              for="accurate-2">2</label>
+          </span>
+
+          <strong>Auto&#8209;Fire:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="auto-fire-0" name="auto-fire" value="0" checked /><label class="big-label pill-label"
+              for="auto-fire-0">No</label>
+            <input type="radio" id="auto-fire-1" name="auto-fire" value="1" /><label class="big-label pill-label"
+              for="auto-fire-1">Yes</label>
+          </span>
+        
+          <strong>Blast:</strong>
+          <span data-blast class="pill-slider pill-slider--grid">
+            <input type="radio" id="blast-00" name="blast" value="0" checked /><label class="big-label pill-label" for="blast-00">0</label>
+            <!-- <input type="radio" id="blast-5" name="blast" value="5" /><label class="big-label pill-label" for="blast-5">0</label> -->
+            <input type="radio" id="blast-4" name="blast" value="4" /><label class="big-label pill-label" for="blast-4">1</label>
+            <input type="radio" id="blast-3" name="blast" value="3" /><label class="big-label pill-label" for="blast-3">2</label>
+            <input type="radio" id="blast-2" name="blast" value="2" /><label class="big-label pill-label" for="blast-2">3</label>
+            <input type="radio" id="blast-1" name="blast" value="1" /><label class="big-label pill-label" for="blast-1">4</label>
+            <input type="radio" id="blast-0" name="blast" value="0" /><label class="big-label pill-label" for="blast-0">5</label>
+
+          </span>
+
+          <strong>Breach:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="breach-0" name="breach" value="0" checked /><label class="big-label pill-label"
+              for="breach-0">0</label>
+            <input type="radio" id="breach-1" name="breach" value="1" /><label class="big-label pill-label"
+              for="breach-1">1</label>
+            <input type="radio" id="breach-2" name="breach" value="2" /><label class="big-label pill-label"
+              for="breach-2">2</label>
+            <input type="radio" id="breach-3" name="breach" value="3" /><label class="big-label pill-label"
+              for="breach-3">3</label>
+          </span>
+        
+          <strong>Burn:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="burn-0" name="burn" value="0" checked /><label class="big-label pill-label"
+              for="burn-0">0</label>
+            <input type="radio" id="burn-1" name="burn" value="1" /><label class="big-label pill-label"
+              for="burn-1">1</label>
+            <input type="radio" id="burn-2" name="burn" value="2" /><label class="big-label pill-label"
+              for="burn-2">2</label>
+          </span>
+
+          <strong>Concussive:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="concussive-0" name="concussive" value="0" checked /><label class="big-label pill-label"
+              for="concussive-0">0</label>
+            <input type="radio" id="concussive-1" name="concussive" value="1" /><label class="big-label pill-label" for="concussive-1">1</label>
+            <input type="radio" id="concussive-2" name="concussive" value="2" /><label class="big-label pill-label" for="concussive-2">2</label>
+          </span>
+
+          <strong>Cumbersome:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="cumbersome-0" name="cumbersome" value="0" checked /><label class="big-label pill-label"
+              for="cumbersome-0">0</label>
+            <input type="radio" id="cumbersome-2" name="cumbersome" value="1" /><label class="big-label pill-label" for="cumbersome-2">2</label>
+            <input type="radio" id="cumbersome-3" name="cumbersome" value="2" /><label class="big-label pill-label" for="cumbersome-3">3</label>
+            <input type="radio" id="cumbersome-4" name="cumbersome" value="3" /><label class="big-label pill-label" for="cumbersome-4">4</label>
+            <input type="radio" id="cumbersome-5" name="cumbersome" value="4" /><label class="big-label pill-label" for="cumbersome-5">5</label>
+          </span>
+
+          <strong>Defensive:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="defensive-0" name="defensive" value="0" checked /><label class="big-label pill-label"
+              for="defensive-0">0</label>
+            <input type="radio" id="defensive-1" name="defensive" value="1" /><label class="big-label pill-label" for="defensive-1">1</label>
+            <input type="radio" id="defensive-2" name="defensive" value="2" /><label class="big-label pill-label" for="defensive-2">2</label>
+          </span>
+
+          <strong>Disorient:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="disorient-0" name="disorient" value="0" checked /><label class="big-label pill-label"
+              for="disorient-0">0</label>
+            <input type="radio" id="disorient-2" name="disorient" value="2" /><label class="big-label pill-label" for="disorient-2">2</label>
+            <input type="radio" id="disorient-3" name="disorient" value="3" /><label class="big-label pill-label" for="disorient-3">3</label>
+            <input type="radio" id="disorient-4" name="disorient" value="4" /><label class="big-label pill-label" for="disorient-4">4</label>
+            <input type="radio" id="disorient-5" name="disorient" value="5" /><label class="big-label pill-label" for="disorient-5">5</label>
+          </span>
+
+          <strong>Ensnare:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="ensnare-0" name="ensnare" value="0" checked /><label class="big-label pill-label"
+              for="ensnare-0">0</label>
+            <input type="radio" id="ensnare-1" name="ensnare" value="1" /><label class="big-label pill-label" for="ensnare-1">1</label>
+            <input type="radio" id="ensnare-2" name="ensnare" value="2" /><label class="big-label pill-label" for="ensnare-2">2</label>
+          </span>
+
+          <strong>Guided:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="guided-0" name="guided" value="0" checked /><label class="big-label pill-label"
+              for="guided-0">0</label>
+            <input type="radio" id="guided-1" name="guided" value="1" /><label class="big-label pill-label" for="guided-1">1</label>
+            <input type="radio" id="guided-2" name="guided" value="2" /><label class="big-label pill-label" for="guided-2">2</label>
+            <input type="radio" id="guided-3" name="guided" value="3" /><label class="big-label pill-label" for="guided-3">3</label>
+            <input type="radio" id="guided-4" name="guided" value="4" /><label class="big-label pill-label" for="guided-4">4</label>
+          </span>
+
+          <strong>Inaccurate:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="inaccurate-0" name="inaccurate" value="0" checked /><label class="big-label pill-label"
+              for="inaccurate-0">0</label>
+            <input type="radio" id="inaccurate-1" name="inaccurate" value="1" /><label class="big-label pill-label" for="inaccurate-1">1</label>
+            <input type="radio" id="inaccurate-2" name="inaccurate" value="2" /><label class="big-label pill-label" for="inaccurate-2">2</label>
+          </span>
+
+          <strong>Inferior:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="inferior-0" name="inferior" value="0" checked /><label class="big-label pill-label"
+              for="inferior-0">No</label>
+            <input type="radio" id="inferior-1" name="inferior" value="1" /><label class="big-label pill-label" for="inferior-1">Yes</label>
+          </span>
+
+          <strong>Knockdown:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="knockdown-0" name="knockdown" value="0" checked /><label class="big-label pill-label" for="knockdown-0">No</label>
+            <input type="radio" id="knockdown-1" name="knockdown" value="1" /><label class="big-label pill-label" for="knockdown-1">Yes</label>
+          </span>
+
+          <strong>Limited&nbsp;Ammo:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="limited-ammo-0" name="limited-ammo" value="0" checked /><label class="big-label pill-label"
+              for="limited-ammo-0">0</label>
+            <input type="radio" id="limited-ammo-1" name="limited-ammo" value="1" /><label class="big-label pill-label" for="limited-ammo-1">1</label>
+            <input type="radio" id="limited-ammo-2" name="limited-ammo" value="2" /><label class="big-label pill-label" for="limited-ammo-2">2</label>
+            <input type="radio" id="limited-ammo-3" name="limited-ammo" value="3" /><label class="big-label pill-label" for="limited-ammo-3">3</label>
+            <input type="radio" id="limited-ammo-4" name="limited-ammo" value="4" /><label class="big-label pill-label" for="limited-ammo-4">4</label>
+            <input type="radio" id="limited-ammo-5" name="limited-ammo" value="5" /><label class="big-label pill-label" for="limited-ammo-5">5</label>
+          </span>
+
+          <strong>Linked:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="linked-0" name="linked" value="0" checked /><label class="big-label pill-label"
+              for="linked-0">0</label>
+            <input type="radio" id="linked-1" name="linked" value="1" /><label class="big-label pill-label" for="linked-1">1</label>
+            <input type="radio" id="linked-2" name="linked" value="2" /><label class="big-label pill-label" for="linked-2">2</label>
+            <input type="radio" id="linked-3" name="linked" value="3" /><label class="big-label pill-label" for="linked-3">3</label>
+            <input type="radio" id="linked-4" name="linked" value="4" /><label class="big-label pill-label" for="linked-4">4</label>
+            <input type="radio" id="linked-5" name="linked" value="5" /><label class="big-label pill-label" for="linked-5">5</label>
+          </span>
+
+          <strong>Pierce:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="number" value="5" min="4" max="25" id="pierce" tabindex="-1">
+            <input type="radio" id="pierce-0" name="pierce" value="0" checked /><label class="big-label pill-label"
+              for="pierce-0">0</label>
+            <input type="radio" id="pierce-1" name="pierce" value="1" /><label class="big-label pill-label" for="pierce-1">1</label>
+            <input type="radio" id="pierce-2" name="pierce" value="2" /><label class="big-label pill-label" for="pierce-2">2</label>
+            <input type="radio" id="pierce-3" name="pierce" value="3" /><label class="big-label pill-label" for="pierce-3">3</label>
+            <input type="radio" id="pierce-4" name="pierce" value="4" /><label class="big-label pill-label" for="pierce-4">4</label>
+            <input type="radio" id="pierce-5" name="pierce" value="5" /><label class="big-label pill-label" for="pierce-5">5</label>
+          </span>
+
+          <strong>Prepare:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="prepare-0" name="prepare" value="0" checked /><label class="big-label pill-label"
+              for="prepare-0">0</label>
+            <input type="radio" id="prepare-1" name="prepare" value="1" /><label class="big-label pill-label" for="prepare-1">1</label>
+            <input type="radio" id="prepare-2" name="prepare" value="2" /><label class="big-label pill-label" for="prepare-2">2</label>
+          </span>
+
+          <strong>Reinforced:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="reinforced-0" name="reinforced" value="0" checked /><label class="big-label pill-label"
+              for="reinforced-0">No</label>
+            <input type="radio" id="reinforced-1" name="reinforced" value="1" /><label class="big-label pill-label" for="reinforced-1">Yes</label>
+          </span>
+
+          <strong>Slow&#8209;Firing:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="slow-firing-0" name="slow-firing" value="0" checked /><label class="big-label pill-label"
+              for="slow-firing-0">0</label>
+            <input type="radio" id="slow-firing-1" name="slow-firing" value="1" /><label class="big-label pill-label" for="slow-firing-1">1</label>
+            <input type="radio" id="slow-firing-2" name="slow-firing" value="2" /><label class="big-label pill-label" for="slow-firing-2">2</label>
+          </span>
+
+          <strong>Stun:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="stun-0" name="stun" value="0" checked /><label class="big-label pill-label"
+              for="stun-0">0</label>
+            <input type="radio" id="stun-1" name="stun" value="1" /><label class="big-label pill-label" for="stun-1">1</label>
+            <input type="radio" id="stun-2" name="stun" value="2" /><label class="big-label pill-label" for="stun-2">2</label>
+            <input type="radio" id="stun-3" name="stun" value="3" /><label class="big-label pill-label" for="stun-3">3</label>
+            <input type="radio" id="stun-4" name="stun" value="4" /><label class="big-label pill-label" for="stun-4">4</label>
+          </span>
+
+          <strong>Stun&nbsp;Damage:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="stun-damage-0" name="stun-damage" value="0" checked /><label class="big-label pill-label"
+              for="stun-damage-0">No</label>
+            <input type="radio" id="stun-damage-1" name="stun-damage" value="1" /><label class="big-label pill-label" for="stun-damage-1">Yes</label>
+          </span>
+
+          <strong>Sunder:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="sunder-0" name="sunder" value="0" checked /><label class="big-label pill-label"
+              for="sunder-0">No</label>
+            <input type="radio" id="sunder-1" name="sunder" value="1" /><label class="big-label pill-label" for="sunder-1">Yes</label>
+          </span>
+
+          <strong>Superior:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="superior-0" name="superior" value="0" checked /><label class="big-label pill-label"
+              for="superior-0">No</label>
+            <input type="radio" id="superior-1" name="superior" value="1" /><label class="big-label pill-label" for="superior-1">Yes</label>
+          </span>
+
+          <strong>Tractor:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="tractor-0" name="tractor" value="0" checked /><label class="big-label pill-label"
+              for="tractor-0">0</label>
+            <input type="radio" id="tractor-1" name="tractor" value="1" /><label class="big-label pill-label" for="tractor-1">1</label>
+            <input type="radio" id="tractor-2" name="tractor" value="2" /><label class="big-label pill-label" for="tractor-2">2</label>
+            <input type="radio" id="tractor-3" name="tractor" value="3" /><label class="big-label pill-label" for="tractor-3">3</label>
+            <input type="radio" id="tractor-4" name="tractor" value="4" /><label class="big-label pill-label" for="tractor-4">4</label>
+            <input type="radio" id="tractor-5" name="tractor" value="5" /><label class="big-label pill-label" for="tractor-5">5</label>
+          </span>
+
+          <strong>Unwieldy:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="unwieldy-0" name="unwieldy" value="0" checked /><label class="big-label pill-label"
+              for="unwieldy-0">0</label>
+            <input type="radio" id="unwieldy-2" name="unwieldy" value="1" /><label class="big-label pill-label" for="unwieldy-2">2</label>
+            <input type="radio" id="unwieldy-3" name="unwieldy" value="2" /><label class="big-label pill-label" for="unwieldy-3">3</label>
+            <input type="radio" id="unwieldy-4" name="unwieldy" value="3" /><label class="big-label pill-label" for="unwieldy-4">4</label>
+            <input type="radio" id="unwieldy-5" name="unwieldy" value="4" /><label class="big-label pill-label" for="unwieldy-5">5</label>
+          </span>
+
+          <strong>Vicious:</strong>
+          <span class="pill-slider pill-slider--grid">
+            <input type="radio" id="vicious-0" name="vicious" value="0" checked /><label class="big-label pill-label"
+              for="vicious-0">0</label>
+            <input type="radio" id="vicious-1" name="vicious" value="1" /><label class="big-label pill-label" for="vicious-1">1</label>
+            <input type="radio" id="vicious-2" name="vicious" value="2" /><label class="big-label pill-label" for="vicious-2">2</label>
+            <input type="radio" id="vicious-3" name="vicious" value="3" /><label class="big-label pill-label" for="vicious-3">3</label>
+            <input type="radio" id="vicious-4" name="vicious" value="4" /><label class="big-label pill-label" for="vicious-4">4</label>
+            <input type="radio" id="vicious-5" name="vicious" value="5" /><label class="big-label pill-label" for="vicious-5">5</label>
+          </span>
+        </div>
+      </fieldset>
+      <input type="reset" value="Reset" />
+    </form>
+  </main>
+  <footer class="small">
+    <p class="footer__text">
+      <em>Genesys</em> is &copy;Fantasy Flight Games. This is a fan site and
+      is not a challenge to their copyright.
+    </p>
+    <p class="footer__text">This site is &copy;2019 cbeck designs.</p>
+  </footer>
+</body>
+</html>

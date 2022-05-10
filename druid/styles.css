@@ -1,0 +1,411 @@
+/* Font Face */
+
+@font-face {
+font-family: 'Bolton';
+font-style: normal;
+font-weight: normal;
+src: local('Bolton'), url('./fonts/Bolton.woff') format('woff');
+}
+
+@font-face {
+font-family: 'BoltonBold';
+font-style: normal;
+font-weight: normal;
+src: local('BoltonBold'), url('./fonts/BoltonBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Genesys';
+  font-style: normal;
+  font-weight: normal;
+  src: url(./fonts/GenesysGlyphsAndDice.woff) format('woff');
+}
+
+.genesys-dice {
+  font-family: 'Genesys';
+}
+
+
+/**********
+* Resets
+**********/
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* background-color: inherit; */
+  font-family: inherit;
+  color: inherit;
+  overflow-wrap: break-word;
+  border-style: solid;
+  border-width: 0;
+  border-color: currentColor;
+}
+
+/**********
+* Variables
+**********/
+
+:root {
+  font-size: calc(0.825rem + 0.5vw);
+
+  --color-primary: 95, 61,28;
+  --color-primary-dark: 50, 20, 0;
+  --color-primary-light: 216, 171, 132;
+  --color-secondary: 191, 82,35;
+  --color-secondary-light: 167, 62, 15;
+  --color-secondary-dark: 255, 200, 145;
+
+  --measure: 60ch;
+  --measure-short: calc(var(--measure)/1.5);
+  --measure-half:  calc(var(--measure)/2);
+  --measure-third: calc(var(--measure)/3);
+  --measure-long:  calc(var(--measure)*1.3333333);
+
+  --ratio: 1.4;
+  --s-5: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-4: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s0) * var(--ratio) * var(--ratio));
+  --s3: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s4: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s5: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+
+  --line-height: var(--ratio);
+  --line-height-small: calc(0.8 * var(--ratio));
+
+  --border-thin: var(--s-5);
+  --border-thick: var(--s-2);
+}
+
+/**********
+* Base styles
+**********/
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: var(--line-height-small);
+  font-family: Bolton, display;
+  font-weight: 700;
+  hyphens: auto;
+  color: rgb(var(--color-primary-dark));
+}
+
+h1,
+.h1 {
+  font-size: var(--s4);
+}
+h2,
+.h2 {
+  font-size: var(--s3);
+}
+h3,
+.h3 {
+  font-size: var(--s2);
+}
+h4,
+.h4 {
+  font-size: var(--s1);
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/**********
+* Main styles
+**********/
+
+
+[data-career="true"]::before {
+  content: '\2713';
+  margin-right: var(--s1);
+}
+[data-career="false"]::before{
+  content: '\2717';
+  margin-right: var(--s1);
+}
+
+
+.hero {
+  max-width: 80vw;
+}
+
+footer {
+  background-color: rgb(var(--color-secondary-light));
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+/**********
+* Modules
+**********/
+
+/* Cover */
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.cover > * {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cover > :first-child:not(img) {
+  margin-top: 0;
+}
+
+.cover > :last-child:not(img) {
+  margin-bottom: 0;
+}
+
+.cover > img {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Center */
+.center {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--measure);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Switcher */
+
+.switcher > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((var(--s1) / 2) * -1);
+  overflow: hidden;
+}
+
+.switcher > * > * {
+  flex-grow: 1;
+  flex-basis: calc((24rem - (100% - var(--s1))) * 999);
+  margin: calc(var(--s1) / 2);
+}
+
+
+/* The Stack */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+} 
+
+.stack > * + * {
+  margin-top: var(--s-1);
+}
+
+/* Space */
+
+.space > * {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stripe > * {
+  padding: var(--s-3);
+}
+.stripe > *:nth-child(even) {
+  background-color: rgb(var(--color-primary-light));
+}
+
+
+/* Frame */
+
+.frame {
+  --n: 9;
+  --d: 16;
+  padding-bottom: calc(var(--n) / var(--d) * 55%);
+  position: relative;
+}
+
+.frame > * {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame > img,
+.frame > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame.half-frame > img{
+  object-position: top;
+}
+
+/* Box */
+
+.box {
+  padding: var(--s1);
+  border: var(--border-thin) solid;
+  --color-light: #fff;
+  --color-dark: #000;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+.box * {
+  color: inherit;
+}
+
+.box.invert {
+  color: var(--color-light);
+  background-color: var(--color-dark);  
+}
+
+/* Cluster */
+
+.cluster {
+  --space: 1rem;
+  overflow: hidden;
+}
+
+.cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.cluster > * > * {
+  margin: calc(var(--space) / 2);
+}
+
+/* Flex grid */
+
+.flex-grid {
+  --space: 1rem;
+  overflow: hidden;
+}
+
+.flex-grid > * {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.flex-grid > * > * {
+  flex: 1 1 var(--measure-half);
+  margin: calc(var(--space) / 2);
+}
+
+
+/* Reel */
+
+.reel {
+  display: flex;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: #fff #000;
+}
+
+.reel::-webkit-scrollbar {
+  height: 1rem;
+}
+
+.reel::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+.reel::-webkit-scrollbar-thumb {
+  background-color: #000;
+  background-image: linear-gradient(#000 0, #000 0.25rem, #fff 0.25rem, #fff 0.75rem, #000 0.75rem);
+}
+
+.reel > * {
+  flex: 0 0 auto;
+}
+
+
+.reel > img {
+  height: 100%;
+  flex-basis: auto;
+  width: auto;
+}
+
+.reel > * + * {
+  margin-left: 1rem;
+}
+
+/**********
+* Utility Classes
+**********/
+
+.measure {
+  max-width: var(--measure);
+}
+
+.measure\:long {
+  max-width: var(--measure-long);
+}
+
+.small {
+  font-size: var(--s-1);
+}
+
+.talents > div {
+  flex-basis: var(--measure-half);
+}
+
+/* Genesys Icons */
+
+
+.genesys {
+  display: inline-block;
+  transform: translateY(15%);
+  height: 1em;
+  width: 1em;
+}
