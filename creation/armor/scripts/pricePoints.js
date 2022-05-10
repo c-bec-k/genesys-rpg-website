@@ -1,44 +1,17 @@
-const soak = new Map([
-  ["0", 0],
-  ["1", 50],
-  ["2", 500],
-  ["3", 1000],
-  ["4", 2500]
-]);
+const soak = [0, 50, 500, 1000, 2500];
 
-const defense = new Map([
-  ["0", 0],
-  ["1", 50],
-  ["2", 500],
-  ["3", 2000],
-  ["4", 5000]
-]);
+const defense = [0, 50, 500, 2000, 5000];
 
-const encumbrance = new Map([
-  ["0", 0],
-  ["1", 75],
-  ["2", 250],
-  ["3", 500]
-]);
+const encumbrance = [0, 75, 250, 500];
 
-const reinforced = new Map([
-  ["no", 0],
-  ["yes", 3000]
-]);
+const reinforced = [0,3000];
 
-const lowLow = new Map([
-  ["low", 100],
-  ["high", 250]
-]);
+const hardPoints = [0,100,200,300,400];
 
-const lowHigh = new Map([
-  ["low", 250],
-  ["high", 500]
-]);
+const lowLow = [100, 250];
 
-const highHigh = new Map([
-  ["low", 1000],
-  ["high", 2000]
-]);
+const lowHigh = [250, 500];
 
-export { soak, defense, encumbrance, reinforced, lowLow, lowHigh, highHigh };
+const highHigh = [1000, 2000];
+
+export { soak, defense, encumbrance, reinforced, hardPoints, lowLow, lowHigh, highHigh };
