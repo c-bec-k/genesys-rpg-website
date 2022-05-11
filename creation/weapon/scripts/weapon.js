@@ -11,9 +11,10 @@ const resetTopRow = () => {
   document.querySelector('[data-show-profile]').innerText = '';
   document.querySelector('input[name="name"]').innerText = '';
   document.querySelector('form').reset();
+  swapDamage();
 }
 
-const getSkillModifier = (formData) => ['Brawl', 'Melee', 'Melee (Light)', 'Melee (Heavy'].includes(formData.get('skill')) ? 0.5 : 1;
+const getSkillModifier = (formData) => ['Brawl', 'Melee', 'Melee (Light)', 'Melee (Heavy)'].includes(formData.get('skill')) ? 0.5 : 1;
 
 const getRangePrice = (formData) => prices.range.get(formData.get('range'));
 
@@ -37,7 +38,8 @@ const getQualitiesPrice = (formData) => {
 
 const formatWeaponString = (formData) => {
   const [qualityList, _] = getQualitiesPrice(formData);
-  const baseString = `${formData.get('name')} (${formData.get('skill').replace('(','[').replace(')',']')}; Damage ${formData.get('damage')}; Critical ${formData.get('critical') > 0 ? `${formData.get('critical')}` : '–'}; Range [${formData.get('range')}]`;
+  const dmgStr = formData.get('brawn-based') ? `+${parseInt(formData.get('damage'))-3}` : formData.get('damage');
+  const baseString = `${formData.get('name')} (${formData.get('skill').replace('(','[').replace(')',']')}; Damage ${dmgStr}; Critical ${formData.get('critical') > 0 ? `${formData.get('critical')}` : '–'}; Range [${formData.get('range')}]`;
   return qualityList.length ? baseString.concat(`; ${qualityList.join(', ')})`) : baseString.concat(')');
 }
 
