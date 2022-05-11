@@ -32,7 +32,7 @@ In designing your own setting, if in doubt we recommend keeping your characters 
 
 **Question:** Can I only engage one single opponent at a time even if both stand next to each other in front of me or could I engage multiple opponents with one maneuver if they stand next to each other? How does blast work in that regard? Are opponents standing next to each other so that they could touch each other count as engaged?
 
-**Answer:**A lot of that is left up to common sense. If two opponents are standing right next to each other, then they are both at engaged range from each other. If you engage one, you would engage them both.
+**Answer:** A lot of that is left up to common sense. If two opponents are standing right next to each other, then they are both at engaged range from each other. If you engage one, you would engage them both.
 
 (There could be some exceptions to this, such as if your GM has one opponent protecting the other, and that opponent interposes themself between your character and the second opponent. In that case, your GM may rule you cannot engage the second character without dealing with the first one. In these cases, common sense and the ongoing narrative would dictate the relative positioning of the characters).
 
