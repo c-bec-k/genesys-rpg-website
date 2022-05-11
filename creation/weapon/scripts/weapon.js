@@ -46,10 +46,12 @@ const formatWeaponString = (formData) => {
 const calcualteBlast = (formData) => {
   const damage = parseInt(formData.get('damage'));
   [4,3,2,1,0].forEach( entry => {
-    const number = (damage >= 20) ? 5 * entry : damage - entry
-    document.querySelector(`#blast-${entry}`).value = number
-    document.querySelector(`[for="blast-${entry}"]`).innerText = number
+    const number = (damage >= 20) ? 20 - (5 * entry) : damage - entry;
+    document.querySelector(`#blast-${entry}`).value = number;
+    document.querySelector(`[for="blast-${entry}"]`).innerText = number;
   });
+  damage >= 20 ? document.querySelector('[for="blast-4"]').classList.add('hidden') : document.querySelector('[for="blast-4"]').classList.remove('hidden');
+  damage >= 20 ? document.querySelector('#blast-4').classList.add('hidden') : document.querySelector('#blast-4').classList.remove('hidden');
 }
 
 const updatePrice = () => {
