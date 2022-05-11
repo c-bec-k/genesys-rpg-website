@@ -37,7 +37,7 @@ const getQualitiesPrice = (formData) => {
 
 const formatWeaponString = (formData) => {
   const [qualityList, _] = getQualitiesPrice(formData);
-  const baseString = `${formData.get('name')} (${formData.get('skill').replace('(','[').replace(')',']')}; Damage ${formData.get('damage')}; Critical ${formData.get('critical')}; Range [${formData.get('range')}]`;
+  const baseString = `${formData.get('name')} (${formData.get('skill').replace('(','[').replace(')',']')}; Damage ${formData.get('damage')}; Critical ${formData.get('critical') > 0 ? `${formData.get('critical')}` : '–'}; Range [${formData.get('range')}]`;
   return qualityList.length ? baseString.concat(`; ${qualityList.join(', ')})`) : baseString.concat(')');
 }
 
