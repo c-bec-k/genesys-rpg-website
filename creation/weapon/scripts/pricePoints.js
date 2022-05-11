@@ -1,30 +1,30 @@
-const damage = new Map([
-  [3, 0],
-  [5, 100],
-  [7, 250],
-  [9, 500],
-  [12, 1000],
-  [30, 3000]
-])
+const damage = (n) => {
+  switch (true) {
+    case n <= 3:
+      return 0;
+    case n <= 5:
+      return 100;
+    case n <= 7:
+      return 250;
+    case n <= 9:
+      return 900;
+    case n <= 12:
+      return 1000;
+    default:
+      return 3000;
+  }
+}
 
 const range = new Map([
-  ["engaged", 0],
-  ['short', 0],
-  ['medium', 100],
-  ['long', 300],
-  ['extreme', 600],
-  ['strategic', 1000]
-])
+  ["Engaged", 0],
+  ['Short', 0],
+  ['Medium', 100],
+  ['Long', 300],
+  ['Extreme', 600],
+  ['Strategic', 1000]
+]);
 
-const critical = new Map([
-  [0, 0],
-  [1, 600],
-  [2, 300],
-  [3, 150],
-  [4, 50],
-  [5, 0],
-  [6, 0]
-])
+const critical = [0, 600, 300, 150, 50, 0, 0];
 
 const qualities = new Map([
   ["accurate", 50],
@@ -46,21 +46,14 @@ const qualities = new Map([
   ["reinforced", 250],
   ["slow-firing", -75],
   ["stun", 50],
-  ["stun-damage", 0],
+  ["stun damage", 0],
   ["sunder", 250],
   ["superior", 250],
   ["tractor", 100],
   ["unwieldy", -100],
   ["vicious", 100]
-])
+]);
 
-const limitedAmmo = new Map([
-  [0,0],
-  [1, -500],
-  [2, -400],
-  [3, -300],
-  [4, -200],
-  [5, -100]
-])
+const limitedAmmo = [0, -500, -400, -300, -200, -100];
 
 export { damage, range, critical, qualities, limitedAmmo }

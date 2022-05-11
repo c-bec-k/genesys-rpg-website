@@ -11,11 +11,22 @@
 <body>
   <nav><a href="/">Home</a></nav>
   <h1>Calculate Weapon Price</h1>
-  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-show-price>0</span></div>
+  <div class="suggested suggested-single title-case small">
+    <ul>
+      <li><strong>Suggested Price:</strong> <span data-show-price>0</span></li>
+      <li><strong>Weapon Profile:</strong> <span data-show-profile></span></li>
+    </ul>
+
+    <input type="reset" value="Reset" />
+  </div>
 
   <main class="measure">
     <h2 class="subheading">Choose Your Options</h2>
     <form id="form">
+      <fieldset class="pill-slider">
+        <legend>Weapon Name</legend>
+        <label><strong>Name: </strong><input type="text" name="name"></label>
+      </fieldset>
       <fieldset>
         <legend>Skill</legend>
         <div class="pill-slider">
@@ -35,30 +46,64 @@
       <fieldset>
         <legend>Range</legend>
         <div class="pill-slider">
-          <input type="radio" name="range" id="engaged" value="engaged" checked><label for="engaged" class="pill-label__text big-label small">Engaged</label>
-          <input type="radio" name="range" id="short" value="short"><label for="short" class="pill-label__text big-label small">Short</label>
-          <input type="radio" name="range" id="medium" value="medium"><label for="medium" class="pill-label__text big-label small">Medium</label>
+          <input type="radio" name="range" id="engaged" value="Engaged" checked><label for="engaged" class="pill-label__text big-label small">Engaged</label>
+          <input type="radio" name="range" id="short" value="Short"><label for="short" class="pill-label__text big-label small">Short</label>
+          <input type="radio" name="range" id="medium" value="Medium"><label for="medium" class="pill-label__text big-label small">Medium</label>
         </div>
         <div class="pill-slider">
-          <input type="radio" name="range" id="long" value="long"><label for="long" class="pill-label__text big-label small">Long</label>
-          <input type="radio" name="range" id="extreme" value="extreme"><label for="extreme" class="pill-label__text big-label small">Extreme</label>
-          <input type="radio" name="range" id="strategic" value="strategic"><label for="strategic" class="pill-label__text big-label small">Strategic</label>
+          <input type="radio" name="range" id="long" value="Long"><label for="long" class="pill-label__text big-label small">Long</label>
+          <input type="radio" name="range" id="extreme" value="Extreme"><label for="extreme" class="pill-label__text big-label small">Extreme</label>
+          <input type="radio" name="range" id="strategic" value="Strategic"><label for="strategic" class="pill-label__text big-label small">Strategic</label>
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Damage</legend>
         <div class="pill-slider">
-          <button type="button" class="pill-label damage--select" data-change="-" data-target="damage">–</button>
-          <div class="pill-label damage--select" data-show-damage>5</div>
-          <input type="number" value="5" min="1" max="25" id="damage" tabindex="-1">
-          <button type="button" class="pill-label damage--select" data-change="+" data-target="damage">+</button>
-        </div>
-        <div class="pill-slider">
-          <input type="checkbox" class="checkbox" id="brawn-based" name="brawn-based" />
+          <input type="checkbox" class="checkbox" id="brawn-based" name="brawn-based" value="1"/>
           <label for="brawn-based"><strong>Brawn-Based</strong></label>
         </div>
-      
+        <div class="pill-slider hidden" data-damage="brawn">
+          <input type="radio" name="damage" id="bdmg-3" value="3"><label class="big-label pill-label" for="bdmg-3">+0</label>
+          <input type="radio" name="damage" id="bdmg-4" value="4"><label class="big-label pill-label" for="bdmg-4">+1</label>
+          <input type="radio" name="damage" id="bdmg-5" value="5"><label class="big-label pill-label" for="bdmg-5">+2</label>
+          <input type="radio" name="damage" id="bdmg-6" value="6"><label class="big-label pill-label" for="bdmg-6">+3</label>
+          <input type="radio" name="damage" id="bdmg-7" value="7"><label class="big-label pill-label" for="bdmg-7">+4</label>
+          <input type="radio" name="damage" id="bdmg-8" value="8"><label class="big-label pill-label" for="bdmg-8">+5</label>
+        </div>
+        <div class="pill-slider" data-damage>
+          <input type="radio" name="damage" id="dmg-3" value="3" checked><label class="big-label pill-label" for="dmg-3">3</label>
+          <input type="radio" name="damage" id="dmg-4" value="4"><label class="big-label pill-label" for="dmg-4">4</label>
+          <input type="radio" name="damage" id="dmg-5" value="5"><label class="big-label pill-label" for="dmg-5">5</label>
+          <input type="radio" name="damage" id="dmg-6" value="6"><label class="big-label pill-label" for="dmg-6">6</label>
+          <input type="radio" name="damage" id="dmg-7" value="7"><label class="big-label pill-label" for="dmg-7">7</label>
+        </div>
+        <div class="pill-slider" data-damage>
+          <input type="radio" name="damage" id="dmg-8" value="8"><label class="big-label pill-label" for="dmg-8">8</label>
+          <input type="radio" name="damage" id="dmg-9" value="9"><label class="big-label pill-label" for="dmg-9">9</label>
+          <input type="radio" name="damage" id="dmg-10" value="10"><label class="big-label pill-label" for="dmg-10">10</label>
+          <input type="radio" name="damage" id="dmg-11" value="11"><label class="big-label pill-label" for="dmg-11">11</label>
+          <input type="radio" name="damage" id="dmg-12" value="12"><label class="big-label pill-label" for="dmg-12">12</label>
+        </div>
+        <div class="pill-slider" data-damage>
+          <input type="radio" name="damage" id="dmg-13" value="13"><label class="big-label pill-label" for="dmg-13">13</label>
+          <input type="radio" name="damage" id="dmg-14" value="14"><label class="big-label pill-label" for="dmg-14">14</label>
+          <input type="radio" name="damage" id="dmg-15" value="15"><label class="big-label pill-label" for="dmg-15">15</label>
+          <input type="radio" name="damage" id="dmg-16" value="16"><label class="big-label pill-label" for="dmg-16">16</label>
+          <input type="radio" name="damage" id="dmg-17" value="17"><label class="big-label pill-label" for="dmg-17">17</label>
+        </div>
+        <div class="pill-slider" data-damage>
+          <input type="radio" name="damage" id="dmg-18" value="18"><label class="big-label pill-label" for="dmg-18">18</label>
+          <input type="radio" name="damage" id="dmg-19" value="19"><label class="big-label pill-label" for="dmg-19">19</label>
+          <input type="radio" name="damage" id="dmg-20" value="20"><label class="big-label pill-label" for="dmg-20">20</label>
+          <input type="radio" name="damage" id="dmg-21" value="21"><label class="big-label pill-label" for="dmg-21">21</label>
+          <input type="radio" name="damage" id="dmg-22" value="22"><label class="big-label pill-label" for="dmg-22">22</label>
+        </div>
+        <div class="pill-slider" data-damage>
+          <input type="radio" name="damage" id="dmg-23" value="23"><label class="big-label pill-label" for="dmg-23">23</label>
+          <input type="radio" name="damage" id="dmg-24" value="24"><label class="big-label pill-label" for="dmg-24">24</label>
+          <input type="radio" name="damage" id="dmg-25" value="25"><label class="big-label pill-label" for="dmg-25">25</label>
+        </div>    
       </fieldset>
 
       <fieldset>
@@ -108,11 +153,11 @@
           <span data-blast class="pill-slider pill-slider--grid">
             <input type="radio" id="blast-00" name="blast" value="0" checked /><label class="big-label pill-label" for="blast-00">0</label>
             <!-- <input type="radio" id="blast-5" name="blast" value="5" /><label class="big-label pill-label" for="blast-5">0</label> -->
-            <input type="radio" id="blast-4" name="blast" value="4" /><label class="big-label pill-label" for="blast-4">1</label>
-            <input type="radio" id="blast-3" name="blast" value="3" /><label class="big-label pill-label" for="blast-3">2</label>
-            <input type="radio" id="blast-2" name="blast" value="2" /><label class="big-label pill-label" for="blast-2">3</label>
-            <input type="radio" id="blast-1" name="blast" value="1" /><label class="big-label pill-label" for="blast-1">4</label>
-            <input type="radio" id="blast-0" name="blast" value="0" /><label class="big-label pill-label" for="blast-0">5</label>
+            <input type="radio" id="blast-4" name="blast" value="1" /><label class="big-label pill-label" for="blast-4">1</label>
+            <input type="radio" id="blast-3" name="blast" value="2" /><label class="big-label pill-label" for="blast-3">2</label>
+            <input type="radio" id="blast-2" name="blast" value="3" /><label class="big-label pill-label" for="blast-2">3</label>
+            <input type="radio" id="blast-1" name="blast" value="4" /><label class="big-label pill-label" for="blast-1">4</label>
+            <input type="radio" id="blast-0" name="blast" value="5" /><label class="big-label pill-label" for="blast-0">5</label>
 
           </span>
 
@@ -215,13 +260,13 @@
 
           <strong>Limited&nbsp;Ammo:</strong>
           <span class="pill-slider pill-slider--grid">
-            <input type="radio" id="limited-ammo-0" name="limited-ammo" value="0" checked /><label class="big-label pill-label"
+            <input type="radio" id="limited-ammo-0" name="limited ammo" value="0" checked /><label class="big-label pill-label"
               for="limited-ammo-0">0</label>
-            <input type="radio" id="limited-ammo-1" name="limited-ammo" value="1" /><label class="big-label pill-label" for="limited-ammo-1">1</label>
-            <input type="radio" id="limited-ammo-2" name="limited-ammo" value="2" /><label class="big-label pill-label" for="limited-ammo-2">2</label>
-            <input type="radio" id="limited-ammo-3" name="limited-ammo" value="3" /><label class="big-label pill-label" for="limited-ammo-3">3</label>
-            <input type="radio" id="limited-ammo-4" name="limited-ammo" value="4" /><label class="big-label pill-label" for="limited-ammo-4">4</label>
-            <input type="radio" id="limited-ammo-5" name="limited-ammo" value="5" /><label class="big-label pill-label" for="limited-ammo-5">5</label>
+            <input type="radio" id="limited-ammo-1" name="limited ammo" value="1" /><label class="big-label pill-label" for="limited-ammo-1">1</label>
+            <input type="radio" id="limited-ammo-2" name="limited ammo" value="2" /><label class="big-label pill-label" for="limited-ammo-2">2</label>
+            <input type="radio" id="limited-ammo-3" name="limited ammo" value="3" /><label class="big-label pill-label" for="limited-ammo-3">3</label>
+            <input type="radio" id="limited-ammo-4" name="limited ammo" value="4" /><label class="big-label pill-label" for="limited-ammo-4">4</label>
+            <input type="radio" id="limited-ammo-5" name="limited ammo" value="5" /><label class="big-label pill-label" for="limited-ammo-5">5</label>
           </span>
 
           <strong>Linked:</strong>
@@ -282,9 +327,8 @@
 
           <strong>Stun&nbsp;Damage:</strong>
           <span class="pill-slider pill-slider--grid">
-            <input type="radio" id="stun-damage-0" name="stun-damage" value="0" checked /><label class="big-label pill-label"
-              for="stun-damage-0">No</label>
-            <input type="radio" id="stun-damage-1" name="stun-damage" value="1" /><label class="big-label pill-label" for="stun-damage-1">Yes</label>
+            <input type="radio" id="stun-damage-0" name="stun damage" value="0" checked /><label class="big-label pill-label" for="stun-damage-0">No</label>
+            <input type="radio" id="stun-damage-1" name="stun damage" value="1" /><label class="big-label pill-label" for="stun-damage-1">Yes</label>
           </span>
 
           <strong>Sunder:</strong>
@@ -334,7 +378,6 @@
           </span>
         </div>
       </fieldset>
-      <input type="reset" value="Reset" />
     </form>
   </main>
   <footer class="small">
