@@ -10,8 +10,8 @@ const resetTopRow = () => {
   document.querySelector('[data-show-price]').innerText = 0;
   document.querySelector('[data-show-profile]').innerText = '';
   document.querySelector('input[name="name"]').innerText = '';
+  if (document.querySelector('#brawn-based').checked) swapDamage();
   document.querySelector('form').reset();
-  swapDamage();
 }
 
 const getSkillModifier = (formData) => ['Brawl', 'Melee', 'Melee (Light)', 'Melee (Heavy)'].includes(formData.get('skill')) ? 0.5 : 1;
