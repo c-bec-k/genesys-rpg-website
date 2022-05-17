@@ -1,117 +1,36 @@
-const silhouette =new Map([
-  [1, 0.5],
-  [4, 1],
-  [5, 2],
-  [6, 10],
-  [10, 100]
-]);
+const silhouetteMod = (sil) => [0.5,1,1,1,2,10,10,10,10,10][sil - 1];
 
+const speedPrice = (speed) => [0,1000,2500,5000,10000][speed - 1];
 
-const maxSpeed = new Map([
-  [1, 0],
-  [2, 1000],
-  [3, 2500],
-  [4, 5000],
-  [5, 10000]
-]);
+const handlingPrice = (handling) => new Map([[-4, -4000], [-3, -2000], [-2, -1500], [-1, -1000], [0, 0], [1, 1000], [2, 2000], [3, 5000], [4, 10000]]).get(handling);
 
-const handling = new Map([
-  [-4, -4000],
-  [-3, -2000],
-  [-2, -1500],
-  [-1, -1000],
-  [0, 0],
-  [1, 1000],
-  [2, 2000],
-  [3, 5000],
-  [4, 10000]
-]);
+const defensePrice = (def) => [0,100,1000,3000,6000][def];
 
-const defense = new Map([
-  [0, 0],
-  [1, 100],
-  [2, 1000],
-  [3, 3000],
-  [4, 6000]
-]);
+const armorPrice = (ar) => [0,2500,5000,10000,25000,50000,100000,200000][ar];
 
-const armor = new Map([
-  [0, 0],
-  [1, 2500],
-  [2, 5000],
-  [3, 10000],
-  [4, 25000],
-  [5, 50000],
-  [6, 100000],
-  [7, 200000]
-]);
+const lessThanPrice = (arr) => (num) => arr.find(([k,v]) => num <= k)[1];
 
-const occupants = new Map([
-  [1, 0],
-  [4, 100],
-  [10, 250],
-  [20, 500],
-  [50, 1000],
-  [250, 5000],
-  [1000, 25000],
-]);
+const occupantPrice = lessThanPrice([[1, 0], [4, 100], [10, 250], [20, 500], [50, 1000], [250, 5000], [1000, 25000],[Infinity, 50000]]);
 
-const encumbrance = new Map([
-  [1, 0],
-  [4, 10],
-  [10, 50],
-  [25, 100],
-  [50, 1000],
-  [100, 2500],
-  [250, 5000],
-  [1000, 10000],
-  [99999999999, 20000]
-]);
+const encumbrancePrice = lessThanPrice([[1, 0], [4, 10], [10, 50], [25, 100], [50, 1000], [100, 2500], [250, 5000], [1000, 10000], [Infinity, 20000]]);
 
-const consumables = new Map([
-  ['hours', 0],
-  ['days', 10],
-  ['weeks', 200],
-  ['months', 400],
-  ['monthsPlus', 1000]
-]);
+const thresholdPrice = (val) => val > 50 ? ((val - 50) * 1000) + 4900 : (val - 1) * 100;
 
-
-function getSilMod(sil) {
-  for(let [key, val] of silhouette) {
-    if (sil <= key) { return val }
-  }
-}
-
-function getThreshold(value) {
-  if (value > 50) {
-    return ((value - 50) * 1000) + 4900;
-  }
-  else {
-    return (value - 1) * 100;
-  }
-};
-
-function getCargo(type, value) {
-  for (let  [key, val] of type) {
-    if (value <= key) {return val};
-  }
-};
+const consumables = (cons) => new Map([['hours', 0],['days', 10],['weeks', 200],['months', 400],['monthsPlus', 1000]]).get(cons);
 
 function determinePrice(vehicle) {
-  const silMod = getSilMod(vehicle.silhouette),
-    speedPrice = maxSpeed.get(vehicle.speed),
-    handlingPrice = handling.get(vehicle.handling),
-    defensePrice = defense.get(vehicle.defense),
-    armorPrice = armor.get(vehicle.armor),
-    consumablesPrice = consumables.get(vehicle.consumables) * ((vehicle.silhouette < 5) ? 1 : 10),
-    httPrice = getThreshold(vehicle.htt),
-    sstPrice = getThreshold(vehicle.sst),
-    occupantsPrice = getCargo(occupants, vehicle.occupants),
-    encPrice = getCargo(encumbrance, vehicle.encumbrance);
-  console.log(consumablesPrice);
-  const totalPrice = (speedPrice + handlingPrice + defensePrice + armorPrice + consumablesPrice + httPrice + sstPrice + occupantsPrice + encPrice) * silMod;
-  return Intl.NumberFormat().format(totalPrice);
+  const silMod = silhouetteMod(vehicle.silhouette);
+  const speed = speedPrice(vehicle.speed);
+  const handling = handlingPrice(vehicle.handling);
+  const defense = defensePrice(vehicle.defense);
+  const armor = armorPrice(vehicle.armor);
+  const consumable = consumables(vehicle.consumables) * ((vehicle.silhouette < 5) ? 1 : 10);
+  const htt = thresholdPrice(vehicle.htt);
+  const sst = thresholdPrice(vehicle.sst);
+  const occupants = occupantPrice(vehicle.occupants);
+  const enc = encumbrancePrice(vehicle.encumbrance);
+  const total = (speed + handling + defense + armor + consumable + htt + sst + occupants + enc) * silMod;
+  return Intl.NumberFormat().format(total);
 }
 
-export { maxSpeed, handling, defense, armor, occupants, encumbrance, consumables, determinePrice };
+export {  determinePrice };

@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
   <script type="module" src="./scripts/vehicles.js"></script>
   <title>Genesys RPG | Vehicle Price Calculator</title>
 </head>
 <body>
   <nav><a href="/">Home</a></nav>
   <h1>Calculate Vehicle Price</h1>
-  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-price>0</span></div>
+  <div class="suggested suggested-single"><strong>Suggested Price:</strong> <span data-price>1,000</span></div>
 
   <main class="center">
     <form>
       <fieldset class="stack">
         <legend>Silhouette</legend>
         <div class="center">
-        <button type="button" class="display-button" aria-label="decrease silhouette" data-direction="decrease" data-value="-1" data-target="silhouette">-</button>
-        <span class="sil-span" data-silhouette data-min="1" data-max="10"> 2 </span>
-        <button type="button" class="display-button" aria-label="increase silhouette" data-direction="increase" data-value="1" data-target="silhouette">+</button>
+          <button type="button" class="display-button" aria-label="decrease silhouette" data-direction="decrease" data-value="-1" data-target="silhouette">-</button>
+          <input class="center box display-button" type="number" name="silhouette" data-input="silhouette" data-silhouette value="1" min="1" max="10">
+          <button type="button" class="display-button" aria-label="increase silhouette" data-direction="increase" data-value="1" data-target="silhouette">+</button>
         </div>
       </fieldset>
       <fieldset class="stack">
@@ -42,7 +42,7 @@
               <option value="-3">-3</option>
               <option value="-2">-2</option>
               <option value="-1">-1</option>
-              <option value="0" selected>±0</option>
+              <option value="0" selected>+0</option>
               <option value="1">+1</option>
               <option value="2">+2</option>
               <option value="3">+3</option>
