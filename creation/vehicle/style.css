@@ -160,6 +160,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .subheading {
@@ -196,6 +197,13 @@ body {
 
 .suggested  span {
   font-size: 1.25rem;
+}
+
+#vehicle {
+  position: sticky;
+  top: 82px;
+  margin-inline: auto;
+  margin-block: 1rem;
 }
 
 form {
@@ -280,10 +288,6 @@ footer {
   --color-dark: #000;
   color: var(--color-dark);
   background-color: var(--color-light);
-}
-
-.box * {
-  /* color: inherit; */
 }
 
 /* Center */
