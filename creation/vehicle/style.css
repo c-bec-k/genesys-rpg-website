@@ -202,6 +202,7 @@ body {
 #vehicle {
   position: sticky;
   top: 82px;
+  /* max-width: calc(100% - 2rem); */
   margin-inline: auto;
   margin-block: 1rem;
 }
