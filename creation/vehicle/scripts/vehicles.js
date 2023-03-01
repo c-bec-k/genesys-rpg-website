@@ -3,7 +3,7 @@ import { drawImage } from './imageLocation.js';
 const ctx = document.createElement("canvas").getContext("2d");
 const imgShow = document.querySelector("#vehicle");
 
-new FontFace("Bebas Neue", "url(./BebasNeue.ttf)").then(font => document.fonts.add(font));
+new FontFace("Bebas Neue", "url(BebasNeue.ttf)").then(font => document.fonts.add(font));
 
 const img = new Image();
 img.onload = () => {
