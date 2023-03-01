@@ -25,7 +25,6 @@ img.onload = () => {
   }
   drawImage(ctx, data);
   const imgURL = ctx.canvas.toDataURL();
-  console.log(imgURL);
   imgShow.src = imgURL;
 }
 
